@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="assets/milhouse.png" type="" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- hojas css -->
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/registro.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <title>Nerd King | Iniciar Sesion</title>
+    <style type="text/css">
+        .session {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-col">
+                <img src="./assets/logo.svg" alt="logotipo de la pagina: nerd king">
+            </div>
+            <div class="nav-col">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span active>
+                    Inicio
+                  </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="productos.html">
+                            <span>
+                    Productos
+                  </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">
+                            <span>
+                    Contacto
+                  </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-col">
+                <ul>
+                    <li>
+                        <a class="session" href="#">
+                            <span>
+                    0
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+                    </li>
+                    <li>
+                        <a class="session" href="/src/sesion.html">
+                            <span>
+                    Iniciar Sesion
+                    <i class="fas fa-user"></i>
+                  </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="formulario">
+        <form onsubmit="return validar();">
+            <ul>
+
+                <li class="form-control">
+                    <label for="nombre">Nombre*</label>
+
+                    <input type="text" id="nombre" name="nombre" onfocus="entroEnFoco(this)" onblur="salioDeFoco(this); revisarObligatorio(this); revisarLongitud(this, 2)" />
+                    <small>Error Message</small>
+                </li>
+                <li class="form-control">
+                    <label for="direccion">Direccion*</label>
+                    <input type="text" id="direccion" name="direccion" onfocus="entroEnFoco(this)" onblur="salioDeFoco(this); revisarObligatorio(this); revisarLongitud(this, 8)" />
+                    <small id="peque">Error Message</small>
+                </li>
+                <li class="form-control">
+                    <label for="edad">Edad</label>
+                    <input type="text" id="edad" name="edad" onfocus="entroEnFoco(this)" onblur="salioDeFoco(this); revisarNumerico(this)" />
+                    <small>Error Message</small>
+                </li>
+                <li class="form-control">
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" name="email" onfocus="entroEnFoco(this)" onblur="salioDeFoco(this); revisarObligatorio(this); revisarEmail(this);" />
+                    <small>Error Message</small>
+                </li>
+
+                <li>
+                    <label>
+        <input type="checkbox" value="SI" id="aceptoCondiciones" />
+        Acepto las condiciones
+        </label>
+                </li>
+            </ul>
+            <button type="submit">Registrarme</button>
+
+
+        </form>
+    </div>
+    <script src="./js/registro.js"></script>
+</body>
+
+</html>

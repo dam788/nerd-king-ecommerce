@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="assets/milhouse.png" type="" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- hojas css -->
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/sesion.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <title>Nerd King | Iniciar Sesion</title>
+    <style type="text/css">
+        .session {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-col">
+                <img src="./assets/logo.svg" alt="logotipo de la pagina: nerd king">
+            </div>
+            <div class="nav-col">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span active>
+                                Inicio
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="productos.html">
+                            <span>
+                                Productos
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">
+                            <span>
+                                Contacto
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-col">
+                <ul>
+                    <li>
+                        <a class="session" href="#">
+                            <span>
+                                0
+                                <i class="fas fa-shopping-cart"></i>
+                            </span>
+                    </li>
+                    <li>
+                        <a class="session" href="/src/sesion.html">
+                            <span>
+                                Iniciar Sesion
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Formulario -->
+    <div class="main">
+        <div class="formulario">
+            <form method="get" autocomplete>
+                <ul>
+                    <li class="form-control">
+                        <label for="email">E-mail</label>
+                        <input 
+                            id="email" 
+                            type="text" 
+                            name="email" 
+                            onfocus="entroEnFoco(this)"
+                            onblur="salioDeFoco(this)"
+                        />
+                        <small id="peque">Error Message</small>
+                    </li>
+
+                    <li class="form-control">
+                        <label for="pass"/>
+                            Contraseña
+                        </label> 
+                        <input 
+                            id="pass"
+                            type="text" 
+                            name="pass" 
+                            onfocus="entroEnFoco(this)"
+                            onblur="salioDeFoco(this)"
+                        />
+                        <small id="peque">Error Message</small>
+                    </li>
+                    <button id="goForm"type="submit">Iniciar Sesión</button>
+                </ul>
+            </form>
+        </div>
+
+    </div>
+    <script src="./js/sesion.js"></script>
+</body>
+
+</html>

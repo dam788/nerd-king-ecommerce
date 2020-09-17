@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap');
+
+
+
+:root{
+  --color-blanco-0: white;
+  --color-blanco-1: whitesmoke;
+  --color-1: #101b5a;
+  --color-2: #3ad2ee;
+  --color-3: #e41376;
+  --color-4: #ffd2ee;
+  --color-5: #8c98a9;
+  --sombra-1: rgba(128, 128, 128, 0.116);
+  user-select: none;
+
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+li a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--color-5);
+}
+
+li a [active] {
+  text-decoration: none;
+  font-weight: 800;
+  color: var(--color-1);
+}
+
+
