@@ -6,9 +6,10 @@ const email     = document.getElementById('email'),
 const entroEnFoco = elem => elem.className = 'enfoco';
 const salioDeFoco = elem => elem.className = '';
 
-const sendForm = () => {
+const sendForm = (e) => {
+    e.preventDefault();
     if( validMail() && validPass() ) return true, window.location.href = '/'; ;
-    if(!validMail()) return false,alert('revisar Email');
+    if(!validMail()) return false, alert('revisar Email');
     if(!validPass()) return false, alert('revisar Password');
 } 
 
@@ -24,4 +25,4 @@ const validPass = () => {
     return regex.test(value);  
 }
 
-submitBtn.addEventListener('submit', sendForm);
+submitBtn.addEventListener('click', sendForm);
