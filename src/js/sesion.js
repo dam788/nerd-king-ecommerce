@@ -24,4 +24,4 @@ const validPass = () => {
     return regex.test(value);  
 }
 
-submitBtn.addEventListener('click', sendForm);
+submitBtn.addEventListener('submit', sendForm);
