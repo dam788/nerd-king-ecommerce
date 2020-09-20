@@ -1,11 +1,12 @@
 html {
-    background-color: var(--color-1) !important;
+    background-color: var(--color-5) !important;
 }
 body {
-    background-color: var(--color-1);
+    background-color: var(--color-5);
     display: flex;
     position: relative;
     justify-content: center;
+    background: url('../assets/fondo.svg') repeat-x left bottom;
 }
 
 main {
@@ -17,20 +18,23 @@ main {
 }
 
 form {
-    /* background-color: var(--color-2); */
     margin: 0.5em;
     padding: 2em;
 }
 
 h1{
-    color: var(--color-3);
+    color: var(--color-2);
     font-size: 35px;
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
+    
+    display: flex;
+    align-content: center;
+
 }
 
 label {
-    color: var(--color-1);
+    color: var(--color-5);
 }
 
 input[type=text],
@@ -39,7 +43,7 @@ select {
     width: 99%;
     background: transparent;
     border: none;
-    border-bottom: 2px inset var(--color-1);
+    border-bottom: 2px inset var(--color-5);
 }
 
 button {
@@ -47,20 +51,22 @@ button {
     margin-top: 20px;
     width: 100%;
     height: 50px;
-    background-color: var(--color-3);
+    background: linear-gradient(336deg, var(--color-1) 0%, var(--color-2) 100%);
     border: none;
     border-radius: 30px;
     font-size: 20px;
     font-weight: 600;
-    color: var(--color-blanco-0);
+    color: #ffffffd0;
     transition: all 0.2s linear;
     transform: scale(1);
 }
 
 button:hover {
-    background-color: var(--color-1);
+    background: linear-gradient(336deg, var(--color-1), var(--color-2) 100%);
     color: var(--color-blanco-0);
     transform: scale(1.03);
+    box-shadow: 0 4px 6px var(--sombra-1);
+}
 }
 
 
@@ -91,6 +97,7 @@ small {
     color: var(--color-4);
     font-weight: bolder;
     visibility: hidden;
+    border-radius: 0 0 12px 12px;
 }
 
 .error {
@@ -116,4 +123,16 @@ small {
 
 *:focus {
     outline-style: none;
+}
+
+.user {
+    padding: 10px 10px;
+    background-color: var(--color-blanco-0);
+    border-radius: 50%;
+    color: var(--color-2);
+    margin-right: 0.3em;
+}
+
+.exclamation {
+    margin-right:10px;
 }
