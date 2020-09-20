@@ -72,9 +72,12 @@
     </header>
 
     <!-- Formulario -->
-    <div class="main">
-        <div class="formulario">
-            <form method="POST" autocomplete>
+    <main>
+        <form method="post">
+            <i class="far fa-user"></i>
+            <h1 class="sesion">
+                Iniciar Sesión
+            </h1>
                 <ul>
                     <li class="form-control">
                         <label for="email">E-mail</label>
@@ -85,7 +88,6 @@
                             onfocus="entroEnFoco(this)"
                             onblur="salioDeFoco(this)"
                         />
-                        <small id="peque">Error Message</small>
                     </li>
 
                     <li class="form-control">
@@ -99,15 +101,13 @@
                             onfocus="entroEnFoco(this)"
                             onblur="salioDeFoco(this)"
                         />
-                        <small id="peque">Error Message</small>
                     </li>
-                    <button id="goForm"type="submit">Iniciar Sesión</button>
+                    <button id="goForm" type="submit">Iniciar Sesión</button>
                 </ul>
             </form>
-        </div>
+            <small id="message" class="">verificar los campos</small>
+        </main>
 
-    </div>
-    <script src="./js/sesion.js"></script>
 </body>
-
+<script src="./js/sesion.js"></script>
 </html>

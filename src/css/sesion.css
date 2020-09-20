@@ -1,59 +1,79 @@
-body {
-    background-color: yellowgreen;
+html {
+    background-color: var(--color-1) !important;
 }
-
-.formulario {
-    padding: 200px;
+body {
+    background-color: var(--color-1);
     display: flex;
-    align-items: center;
+    position: relative;
     justify-content: center;
 }
 
+main {
+    background-color: var(--color-blanco-1);
+    width: 400px;
+    min-width: 300px;
+    top:110px;
+    border-radius: 12px;
+}
+
 form {
-    background-color: #adadd5;
-    padding: 10px;
-    width: 300px;
-    margin: auto;
-    box-sizing: border-box;
-    border: 1.5px solid black;
-    border-radius: 7px 7px 7px 25px;
+    /* background-color: var(--color-2); */
+    margin: 0.5em;
+    padding: 2em;
+}
+
+h1{
+    color: var(--color-3);
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 1em;
 }
 
 label {
-    width: 200px;
-    display: block;
-    margin: 10px;
-    float: left;
+    color: var(--color-1);
 }
 
 input[type=text],
 select {
-    width: 80%;
-    float: left;
-    margin: 0 10%;
+    height: 35px;
+    width: 99%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px inset var(--color-1);
 }
 
 button {
-    background-color: rgb(100, 5, 145);
-    color: wheat;
-    display: block;
-    clear: both;
-    margin-left: 170px;
-    opacity: 80%;
+    display: inline-block;
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-3);
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-blanco-0);
+    transition: all 0.2s linear;
+    transform: scale(1);
 }
 
 button:hover {
-    opacity: 50%;
+    background-color: var(--color-1);
+    color: var(--color-blanco-0);
+    transform: scale(1.03);
 }
+
 
 button:active {
     opacity: 100%;
+    transform: scale(0.97);
 }
 
 ul {
     list-style: none;
-    margin: 0px;
-}
+    margin: 0;
+    padding: 0;
+  }
 
 li {
     margin: 0px;
@@ -61,33 +81,39 @@ li {
     height: 80px;
 }
 
-.form-control.error input {
-    border-color: purple;
-}
 
-.form-control small {
-    color: red;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+small {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 1em 0;
+    background-color: var(--color-3);
+    color: var(--color-4);
+    font-weight: bolder;
     visibility: hidden;
 }
 
-.form-control.error small {
+.error {
     visibility: visible;
+    font-weight: 800;
 }
 
-.enfoco {
-    background-color: #9F9;
-    border: 1px solid green;
+*:-webkit-autofill,
+*:-webkit-autofill:hover,
+*:-webkit-autofill:focus,
+*:-webkit-autofill:active {
+  /* use animation hack, if you have hard styled input */
+  transition: all 5000s ease-in-out 0s;
+  transition-property: background-color, color;
+  /* if input has one color, and didn't have bg-image use shadow */
+  /* -webkit-box-shadow: 0 0 0 1000px transparent inset; */
+  /* text color */
+  -webkit-text-fill-color: var(--color-1);
+  color: var(--color-1);
+  /* font weigth */
+  font-weight: 600!important;
 }
 
-.ayuda {
-    font-size: xx-small;
-    color: green;
-}
-
-input.error {
-    background-color: #FF9;
-    border: 1px solid red;
+*:focus {
+    outline-style: none;
 }
