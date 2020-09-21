@@ -21,9 +21,9 @@
 <body>
     <header>
         <nav>
-            <div class="nav-col">
+            <a class="nav-col linkLogo" href="/">
                 <img src="./assets/logo.svg" alt="logotipo de la pagina: nerd king">
-            </div>
+            </a>
             <div class="nav-col">
                 <ul>
                     <li>
@@ -60,13 +60,29 @@
                     </li>
                     <li>
                         <a class="session" href="/src/sesion.html">
-                            <span>
+                            <span id="userSesion">
                     Iniciar Sesion
                     <i class="fas fa-user"></i>
                   </span>
                         </a>
                     </li>
                 </ul>
+                <div class="menuFlotante">
+                    <ul>
+                        <li id="userChange">
+                            <a href="/src/sesion.html">
+                                <i class="fas fa-user-circle"></i>  cambiar de Usuario 
+                            </a>
+                        </li>
+                    </ul>
+                    <ul id="exit">
+                        <li >
+                            <a href="#">
+                                <i class="fas fa-sign-out-alt"></i>  salir  
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -110,5 +126,47 @@
     </div>
     <script src="./js/registro.js"></script>
 </body>
+<script>
+    let emailName = document.getElementById('userSesion').parentNode.parentNode,
+    storage       = window.localStorage;
+    let subMenu =document.getElementsByClassName('menuFlotante')[0];
 
+    const StorageMail = () => {
+        if(storage.getItem('userMail')){
+            emailName.innerHTML = 
+            `
+            <a class="useActive">
+                            <span id="userSesion">
+                  ${storage.getItem('userMail')}
+                  <i class="fas fa-user"></i>
+                </span>
+            </a>
+            `
+        }
+    }
+    StorageMail();
+
+    emailName.addEventListener('click', () => {
+        storage.getItem('userMail') ?
+            subMenu.classList.toggle('visible')
+            : subMenu.classList.remove('visible')
+    });
+    
+    let exit = document.getElementById('exit');  
+    exit.addEventListener('click', () => { 
+        storage.clear();
+        if(!storage.getItem('userMail')){
+            emailName.innerHTML = 
+            `
+            <a class="session" href="/src/sesion.html">
+                            <span id="userSesion">
+                  Iniciar Sesion
+                  <i class="fas fa-user"></i>
+                </span>
+            </a>
+            `;
+        }
+        subMenu.classList.remove('visible');
+    })
+</script>
 </html>

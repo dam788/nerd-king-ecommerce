@@ -61,3 +61,34 @@ nav{
 }
 
 
+/* menu flotante */
+
+.menuFlotante{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-5);
+    z-index: 10;
+    top: 60px;
+    right: 40px;
+    padding: 1em 0;
+    border-radius: 20px 0px 20px 20px;
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
+
+.menuFlotante ul *{
+    color: white;
+    width: 100%;
+    text-align: start;
+}
+
+.menuFlotante ul >*:hover {
+    background-color: hsla(0, 0%, 100%, 0.212) !important;
+    width: 100%;
+    cursor: pointer;
+}
+

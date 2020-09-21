@@ -33,4 +33,7 @@ li a [active] {
   color: var(--color-1);
 }
 
+a{
+  cursor: pointer;
+}
 

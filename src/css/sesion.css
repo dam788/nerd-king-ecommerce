@@ -67,7 +67,7 @@ button:hover {
     transform: scale(1.03);
     box-shadow: 0 4px 6px var(--sombra-1);
 }
-}
+
 
 
 button:active {
@@ -135,4 +135,8 @@ small {
 
 .exclamation {
     margin-right:10px;
+}
+
+.linkLogo {
+    cursor: pointer;
 }
