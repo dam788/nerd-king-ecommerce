@@ -1,11 +1,10 @@
-
 header {
     position: absolute;
-    width: 100%;  
+    width: 100%;
     background: var(--color-blanco-1);
 }
 
-nav{
+nav {
     display: flex;
     align-items: center;
 }
@@ -40,20 +39,20 @@ nav{
     margin: 0 20px;
 }
 
-.nav-col ul > * {
+.nav-col ul>* {
     border-radius: 30px;
     transition: all 200ms linear;
 }
 
-.nav-col ul > *:hover {
+.nav-col ul>*:hover {
     border-radius: 30px;
     background-color: var(--color-blanco-0);
     box-shadow: 0 2px 6px var(--sombra-1);
 }
 
-.nav-col ul > *:hover a {
+.nav-col ul>*:hover a {
     color: var(--color-3);
-} 
+}
 
 .nav-col ul li {
     padding: 10px 20px;
@@ -63,7 +62,7 @@ nav{
 
 /* menu flotante */
 
-.menuFlotante{
+.menuFlotante {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -76,19 +75,18 @@ nav{
     visibility: hidden;
 }
 
-.visible{
+.visible {
     visibility: visible;
 }
 
-.menuFlotante ul *{
+.menuFlotante ul * {
     color: white;
     width: 100%;
     text-align: start;
 }
 
-.menuFlotante ul >*:hover {
+.menuFlotante ul>*:hover {
     background-color: hsla(0, 0%, 100%, 0.212) !important;
     width: 100%;
     cursor: pointer;
 }
-

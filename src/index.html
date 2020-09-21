@@ -5,6 +5,7 @@
     <link rel="icon" href="assets/milhouse.png" type="" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <!-- fontazome -->
     <script defer src="./js/all.min.js"></script>
     <title>Nerd King | Principal</title>
@@ -65,14 +66,14 @@
                     <ul>
                         <li id="userChange">
                             <a href="/src/sesion.html">
-                                <i class="fas fa-user-circle"></i>  cambiar de Usuario 
+                                <i class="fas fa-user-circle"></i> cambiar de Usuario
                             </a>
                         </li>
                     </ul>
                     <ul id="exit">
-                        <li >
+                        <li>
                             <a href="#">
-                                <i class="fas fa-sign-out-alt"></i>  salir  
+                                <i class="fas fa-sign-out-alt"></i> salir
                             </a>
                         </li>
                     </ul>
@@ -116,6 +117,19 @@
 
         </div>
 
+        <!-- <div class="footer">
+            <section class="contact bg-light pt-5 text-center">
+                <div class="container">
+                    <div class="row py-3">
+                        <div class="col-lg7 mx-auto">
+                            <input type="text" placeholder="Ingresa tu Email">
+                            <button class="btn4 my-5">NEWSLETTER</button>
+                            <p>©losDamis 2020</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div> -->
         <main>
             <div class="row-main">
                 <col-main>
@@ -127,13 +141,13 @@
 </body>
 <script>
     let emailName = document.getElementById('userSesion').parentNode.parentNode,
-    storage       = window.localStorage;
-    let subMenu =document.getElementsByClassName('menuFlotante')[0];
+        storage = window.localStorage;
+    let subMenu = document.getElementsByClassName('menuFlotante')[0];
 
     const StorageMail = () => {
-        if(storage.getItem('userMail')){
-            emailName.innerHTML = 
-            `
+        if (storage.getItem('userMail')) {
+            emailName.innerHTML =
+                `
             <a class="useActive">
                             <span id="userSesion">
                   ${storage.getItem('userMail')}
@@ -147,16 +161,16 @@
 
     emailName.addEventListener('click', () => {
         storage.getItem('userMail') ?
-            subMenu.classList.toggle('visible')
-            : subMenu.classList.remove('visible')
+            subMenu.classList.toggle('visible') :
+            subMenu.classList.remove('visible')
     });
-    
-    let exit = document.getElementById('exit');  
-    exit.addEventListener('click', () => { 
+
+    let exit = document.getElementById('exit');
+    exit.addEventListener('click', () => {
         storage.clear();
-        if(!storage.getItem('userMail')){
-            emailName.innerHTML = 
-            `
+        if (!storage.getItem('userMail')) {
+            emailName.innerHTML =
+                `
             <a class="session" href="/src/sesion.html">
                             <span id="userSesion">
                   Iniciar Sesion
@@ -168,4 +182,5 @@
         subMenu.classList.remove('visible');
     })
 </script>
+
 </html>

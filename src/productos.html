@@ -1,109 +1,223 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+
+<head>
+    <link rel="icon" href="assets/milhouse.png" type="" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- hojas css -->
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./css/general.css">
     <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="css/footer.css">
     <!-- fontazome -->
-      <script defer src="./js/all.min.js"></script>
+    <script defer src="./js/all.min.js"></script>
     <title>Nerd King | Productos</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- header zone -->
     <!-- <div class="linea"></div> -->
     <header>
-      <nav>
-        <a class="nav-col linkLogo" href="/">
-          <img src="./assets/logo.svg" alt="logotipo de la pagina: nerd king">
-      </a>
-        <div class="nav-col">
-          <ul>
-            <li>
-              <a href="/">
-                <span>
+        <nav>
+            <a class="nav-col linkLogo" href="/">
+                <img src="./assets/logo.svg" alt="logotipo de la pagina: nerd king">
+            </a>
+            <div class="nav-col">
+                <ul>
+                    <li>
+                        <a href="/">
+                            <span>
                   Inicio
-                </span> 
-              </a>
-            </li>
-            <li>
-              <a href="/src/productos.html">
-                <span active>
+                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/src/productos.html">
+                            <span active>
                   Productos
-                </span> 
-              </a>
-            </li>        
-            <li>
-              <a href="/src/contacto.html">
-                <span>
+                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/src/contacto.html">
+                            <span>
                   Contacto
-                </span> 
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="nav-col">
-          <ul>
-            <li>
-              <a class="session" href="#">
-                <span>
+                </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-col">
+                <ul>
+                    <li>
+                        <a class="session" href="#">
+                            <span>
                   0
                   <i class="fas fa-shopping-cart"></i>
-                </span> 
-            </li>
-            <li>
-              <a class="session" href="/src/sesion.html">
-                <span id="userSesion">
+                </span>
+                    </li>
+                    <li>
+                        <a class="session" href="/src/sesion.html">
+                            <span id="userSesion">
                   Iniciar Sesion
                   <i class="fas fa-user"></i>
-                </span> 
-              </a>
-            </li>
-          </ul>
-          <div class="menuFlotante">
-            <ul>
-                <li id="userChange">
-                    <a href="/src/sesion.html">
-                        <i class="fas fa-user-circle"></i>  cambiar de Usuario 
-                    </a>
-                </li>
-            </ul>
-            <ul id="exit">
-                <li >
-                    <a href="#">
-                        <i class="fas fa-sign-out-alt"></i>  salir  
-                    </a>
-                </li>
-            </ul>
-        </div>
-        </div>
-      </nav>
-  </header>
+                </span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="menuFlotante">
+                    <ul>
+                        <li id="userChange">
+                            <a href="/src/sesion.html">
+                                <i class="fas fa-user-circle"></i> cambiar de Usuario
+                            </a>
+                        </li>
+                    </ul>
+                    <ul id="exit">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-sign-out-alt"></i> salir
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <div class="cuerpo">
+        <section class="collection">
+            <div class="container py-5">
+                <h1 class="text-center">Nucba Collection</h1>
+                <div class="row py-5">
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img src="assets/remera-5.jpg" class="img-fluid mb-3" alt="">
+                            <input type="button" value="Sumar al carrito">
+                            <h5>Remera JS</h5>
+                            <p><small><del>$1000</del><span>$600</span></small></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img src="assets/remera-2.png" class="img-fluid mb-3" alt="">
+                            <input type="button" value="Sumar al carrito">
+                            <h5>Remera Node js</h5>
+                            <p><small><del>$1000</del><span>$600</span></small></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img src="assets/remera-3.jpg" class="img-fluid mb-3" alt="">
+                            <input type="button" value="Sumar al carrito">
+                            <h5>Remera js</h5>
+                            <p><small><del>$1000</del><span>$600</span></small></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img src="assets/bolso.png" class="img-fluid mb-3" alt="">
+                            <input type="button" value="Sumar al carrito">
+                            <h5>Bolso Go</h5>
+                            <p><small><del>$100</del><span>$60</span></small></p>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+        </section>
+        <section class="parallex py-5">
+            <div class="container py-5 text-white text-center">
+                <div class="row py-3">
+                    <div class="col-lg-9">
+                        <h1>Nucba store</h1>
+                        <p class="py-3">Esos productos que no conseguis en ninguna tienda, aqui, con un solo click podes tenerlos en tu domicilio y con descuentos increibles...</p>
+                        <button class="btn2 mr-1">COMPRA YA</button>
+                        <button class="btn3 mr-1">OFERTAS</button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="collection">
+            <div class="container py-5">
+                <h1 class="text-center">Productos destacados</h1>
+                <div class="row py-5">
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img src="assets/remera.png" class="img-fluid mb-3" alt="">
+                            <input type="button" value="Sumar al carrito">
+                            <h5>Remera Nucba</h5>
+                            <p><small><del>$1000</del><span>$600</span></small></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img src="assets/remera-2.png" class="img-fluid mb-3" alt="">
+                            <input type="button" value="Sumar al carrito">
+                            <h5>Remera Node js</h5>
+                            <p><small><del>$1000</del><span>$600</span></small></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img src="assets/remera-3.jpg" class="img-fluid mb-3" alt="">
+                            <input type="button" value="Sumar al carrito">
+                            <h5>Remera Node js</h5>
+                            <p><small><del>$1000</del><span>$600</span></small></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img src="assets/bolso.png" class="img-fluid mb-3" alt="">
+                            <input type="button" value="Sumar al carrito">
+                            <h5>Bolso Go</h5>
+                            <p><small><del>$100</del><span>$60</span></small></p>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+        </section>
 
-  <main>
-    <div class="row-main">
-      <col-main>
-
-      </col-main>
+    </div>
+    <div class="footer">
+        <section class="contact bg-light pt-5 text-center">
+            <div class="container">
+                <div class="row py-3">
+                    <div class="col-lg7 mx-auto">
+                        <input type="text" placeholder="Ingresa tu Email">
+                        <button class="btn4 my-5">NEWSLETTER</button>
+                        <p>©losDamis 2020</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-  </main>
+
+
+    <main>
+        <div class="row-main">
+            <col-main>
+
+            </col-main>
+        </div>
+
+    </main>
 </body>
 <script>
-  let emailName = document.getElementById('userSesion').parentNode.parentNode,
-  storage       = window.localStorage;
-  let subMenu =document.getElementsByClassName('menuFlotante')[0];
+    let emailName = document.getElementById('userSesion').parentNode.parentNode,
+        storage = window.localStorage;
+    let subMenu = document.getElementsByClassName('menuFlotante')[0];
 
-  const StorageMail = () => {
-      if(storage.getItem('userMail')){
-          emailName.innerHTML = 
-          `
+    const StorageMail = () => {
+        if (storage.getItem('userMail')) {
+            emailName.innerHTML =
+                `
           <a class="useActive">
                           <span id="userSesion">
                 ${storage.getItem('userMail')}
@@ -111,22 +225,22 @@
               </span>
           </a>
           `
-      }
-  }
-  StorageMail();
+        }
+    }
+    StorageMail();
 
-  emailName.addEventListener('click', () => {
-      storage.getItem('userMail') ?
-          subMenu.classList.toggle('visible')
-          : subMenu.classList.remove('visible')
-  });
-  
-  let exit = document.getElementById('exit');  
-  exit.addEventListener('click', () => { 
-      storage.clear();
-      if(!storage.getItem('userMail')){
-          emailName.innerHTML = 
-          `
+    emailName.addEventListener('click', () => {
+        storage.getItem('userMail') ?
+            subMenu.classList.toggle('visible') :
+            subMenu.classList.remove('visible')
+    });
+
+    let exit = document.getElementById('exit');
+    exit.addEventListener('click', () => {
+        storage.clear();
+        if (!storage.getItem('userMail')) {
+            emailName.innerHTML =
+                `
           <a class="session" href="/src/sesion.html">
                           <span id="userSesion">
                 Iniciar Sesion
@@ -134,8 +248,9 @@
               </span>
           </a>
           `;
-      }
-      subMenu.classList.remove('visible');
-  })
+        }
+        subMenu.classList.remove('visible');
+    })
 </script>
+
 </html>
