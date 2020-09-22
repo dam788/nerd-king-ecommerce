@@ -2,10 +2,9 @@
 <html lang="es">
 
 <head>
-    <link rel="icon" href="assets/milhouse.png" type="" />
+    <link rel="icon" href="assets/milhouse.png" type="favicon/icon" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- hojas css -->
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./css/general.css">
@@ -18,197 +17,217 @@
 </head>
 
 <body>
-    <!-- header zone -->
-    <!-- <div class="linea"></div> -->
-    <header>
-        <nav>
-            <a class="nav-col linkLogo" href="/">
-                <img src="./assets/logo.svg" alt="logotipo de la pagina: nerd king">
-            </a>
-            <div class="nav-col">
-                <ul>
-                    <li>
-                        <a href="/">
-                            <span>
-                  Inicio
-                </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/src/productos.html">
-                            <span active>
-                  Productos
-                </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/src/contacto.html">
-                            <span>
-                  Contacto
-                </span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="nav-col">
-                <ul>
-                    <li>
-                        <a class="session" href="#">
-                            <span>
-                  0
-                  <i class="fas fa-shopping-cart"></i>
-                </span>
-                    </li>
-                    <li>
-                        <a class="session" href="/src/sesion.html">
-                            <span id="userSesion">
-                  Iniciar Sesion
-                  <i class="fas fa-user"></i>
-                </span>
-                        </a>
-                    </li>
-                </ul>
-                <div class="menuFlotante">
+        <header>
+            <nav>
+                <a class="nav-col linkLogo" href="/">
+                    <img src="./assets/logo.svg" alt="logotipo de la pagina: nerd king">
+                </a>
+                <div class="nav-col">
                     <ul>
-                        <li id="userChange">
-                            <a href="/src/sesion.html">
-                                <i class="fas fa-user-circle"></i> cambiar de Usuario
+                        <li>
+                            <a href="/">
+                                <span>
+                                    Inicio
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/src/productos.html">
+                                <span active>
+                                    Productos
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/src/contacto.html">
+                                <span>
+                                    Contacto
+                                </span>
                             </a>
                         </li>
                     </ul>
-                    <ul id="exit">
+                </div>
+                <div class="nav-col">
+                    <ul>
                         <li>
                             <a href="#">
-                                <i class="fas fa-sign-out-alt"></i> salir
+                                <span>
+                                    0
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                        </li>
+                        <li>
+                            <a href="/src/sesion.html">
+                                <span id="userSesion">
+                                    Iniciar Sesion
+                                    <i class="fas fa-user"></i>
+                                </span>
                             </a>
                         </li>
                     </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <div class="cuerpo">
-        <section class="collection">
-            <div class="container py-5">
-                <h1 class="text-center">Nucba Collection</h1>
-                <div class="row py-5">
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <img src="assets/remera-5.jpg" class="img-fluid mb-3" alt="">
-                            <input type="button" value="Sumar al carrito">
-                            <h5>Remera JS</h5>
-                            <p><small><del>$1000</del><span>$600</span></small></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <img src="assets/remera-2.png" class="img-fluid mb-3" alt="">
-                            <input type="button" value="Sumar al carrito">
-                            <h5>Remera Node js</h5>
-                            <p><small><del>$1000</del><span>$600</span></small></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <img src="assets/remera-3.jpg" class="img-fluid mb-3" alt="">
-                            <input type="button" value="Sumar al carrito">
-                            <h5>Remera js</h5>
-                            <p><small><del>$1000</del><span>$600</span></small></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <img src="assets/bolso.png" class="img-fluid mb-3" alt="">
-                            <input type="button" value="Sumar al carrito">
-                            <h5>Bolso Go</h5>
-                            <p><small><del>$100</del><span>$60</span></small></p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <section class="parallex py-5">
-            <div class="container py-5 text-white text-center">
-                <div class="row py-3">
-                    <div class="col-lg-9">
-                        <h1>Nucba store</h1>
-                        <p class="py-3">Esos productos que no conseguis en ninguna tienda, aqui, con un solo click podes tenerlos en tu domicilio y con descuentos increibles...</p>
-                        <button class="btn2 mr-1">COMPRA YA</button>
-                        <button class="btn3 mr-1">OFERTAS</button>
+                    <div class="menuFlotante">
+                        <ul>
+                            <li id="userChange">
+                                <a href="/src/sesion.html">
+                                    <i class="fas fa-user-circle"></i> cambiar de Usuario
+                                </a>
+                            </li>
+                        </ul>
+                        <ul id="exit">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-sign-out-alt"></i> salir
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </section>
+            </nav>
+        </header>
 
-        <section class="collection">
-            <div class="container py-5">
-                <h1 class="text-center">Productos destacados</h1>
-                <div class="row py-5">
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <img src="assets/remera.png" class="img-fluid mb-3" alt="">
-                            <input type="button" value="Sumar al carrito">
-                            <h5>Remera Nucba</h5>
-                            <p><small><del>$1000</del><span>$600</span></small></p>
+
+        <main>
+            <section class="mainSection">
+                        <div class="mainRow">
+                            <h1>Nucba store</h1>
+                            <p class="py-3">
+                                Productos 100% Originales, de Nucbers para Nucbers
+                                a un solo click de distancia!
+                            </p>
+                            <button>VER PRODUCTOS</button>
+                        </div>
+            </section>
+            <section class="collection">
+                <div class="container">
+                    <h2 class="text-center">Nucba Collection</h2>
+                    
+                    
+                    <div id="prod_#" class="boxProduct">
+                        <div class="imgProduct" alt="imagen de producto">
+                            <img class="boxForm" src="./assets/imgBoxForm.svg">
+                            <h3 class="precio">
+                                <small>$800</small>
+                                $499
+                            </h3>
+                        </div>
+                        <div class="pieBox">
+                            <div class="titleSubtitle">
+                                <h3 class="nombreProd">Remera Bla bla</h3>
+                                <small class="descProd">                    Importada de Chaina bla 
+                                </small>
+                            </div>
+                            <button>
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <img src="assets/remera-2.png" class="img-fluid mb-3" alt="">
-                            <input type="button" value="Sumar al carrito">
-                            <h5>Remera Node js</h5>
-                            <p><small><del>$1000</del><span>$600</span></small></p>
+
+                    
+                    <div id="prod_#" class="boxProduct">
+                        <div class="imgProduct" alt="imagen de producto">
+                            <img class="boxForm" src="./assets/imgBoxForm.svg">
+                            <h3 class="precio">
+                                <small>$800</small>
+                                $499
+                            </h3>
+                        </div>
+                        <div class="pieBox">
+                            <div class="titleSubtitle">
+                                <h3 class="nombreProd">Remera Bla bla</h3>
+                                <small class="descProd">                    Importada de Chaina bla 
+                                </small>
+                            </div>
+                            <button>
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <img src="assets/remera-3.jpg" class="img-fluid mb-3" alt="">
-                            <input type="button" value="Sumar al carrito">
-                            <h5>Remera Node js</h5>
-                            <p><small><del>$1000</del><span>$600</span></small></p>
+
+                    
+                    <div id="prod_#" class="boxProduct">
+                        <div class="imgProduct" alt="imagen de producto">
+                            <img class="boxForm" src="./assets/imgBoxForm.svg">
+                            <h3 class="precio">
+                                <small>$800</small>
+                                $499
+                            </h3>
+                        </div>
+                        <div class="pieBox">
+                            <div class="titleSubtitle">
+                                <h3 class="nombreProd">Remera Bla bla</h3>
+                                <small class="descProd">                    Importada de Chaina bla 
+                                </small>
+                            </div>
+                            <button>
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <img src="assets/bolso.png" class="img-fluid mb-3" alt="">
-                            <input type="button" value="Sumar al carrito">
-                            <h5>Bolso Go</h5>
-                            <p><small><del>$100</del><span>$60</span></small></p>
+
+                    
+                    <div id="prod_#" class="boxProduct">
+                        <div class="imgProduct" alt="imagen de producto">
+                            <img class="boxForm" src="./assets/imgBoxForm.svg">
+                            <h3 class="precio">
+                                <small>$800</small>
+                                $499
+                            </h3>
+                        </div>
+                        <div class="pieBox">
+                            <div class="titleSubtitle">
+                                <h3 class="nombreProd">Remera Bla bla</h3>
+                                <small class="descProd">                    Importada de Chaina bla 
+                                </small>
+                            </div>
+                            <button>
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
                         </div>
                     </div>
+
+                    
+                    <div id="prod_#" class="boxProduct">
+                        <div class="imgProduct" alt="imagen de producto">
+                            <img class="boxForm" src="./assets/imgBoxForm.svg">
+                            <h3 class="precio">
+                                <small>$800</small>
+                                $499
+                            </h3>
+                        </div>
+                        <div class="pieBox">
+                            <div class="titleSubtitle">
+                                <h3 class="nombreProd">Remera Bla bla</h3>
+                                <small class="descProd">                    Importada de Chaina bla 
+                                </small>
+                            </div>
+                            <button>
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+
 
                 </div>
-            </div>
-        </section>
+            </section>
 
-    </div>
-    <div class="footer">
-        <section class="contact bg-light pt-5 text-center">
-            <div class="container">
-                <div class="row py-3">
-                    <div class="col-lg7 mx-auto">
-                        <input type="text" placeholder="Ingresa tu Email">
-                        <button class="btn4 my-5">NEWSLETTER</button>
-                        <p>©losDamis 2020</p>
+
+        </main>
+
+        <!-- <div class="footer">
+            <section class="contact bg-light pt-5 text-center">
+                <div class="container">
+                    <div class="row py-3">
+                        <div class="col-lg7 mx-auto">
+                            <input type="text" placeholder="Ingresa tu Email">
+                            <button class="btn4 my-5">NEWSLETTER</button>
+                            <p>©losDamis 2020</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
-
-
-
-    <main>
-        <div class="row-main">
-            <col-main>
-
-            </col-main>
-        </div>
-
-    </main>
+            </section>
+        </div> -->
 </body>
+
 <script>
     let emailName = document.getElementById('userSesion').parentNode.parentNode,
         storage = window.localStorage;
@@ -242,7 +261,7 @@
             emailName.innerHTML =
                 `
           <a class="session" href="/src/sesion.html">
-                          <span id="userSesion">
+              <span id="userSesion">
                 Iniciar Sesion
                 <i class="fas fa-user"></i>
               </span>

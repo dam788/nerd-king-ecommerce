@@ -1,146 +1,117 @@
-* {
-    padding: 0;
-    margin: 0;
-    background-origin: border-box;
-}
-
-body {
-    height: max-content;
-    max-width: 1500px;
-}
-
-
-/* header {
-    visibility: hidden;
-} */
-
-.produc {
-    display: none;
-}
-
-.collection span {
-    color: burlywood;
-    font-size: 19px;
-    /* font-weight: 800; */
-    padding-left: 5px;
-}
-
-.card {
-    border: none;
-}
-
-.collection input {
-    position: absolute;
-    height: 45px;
-    width: 110px;
-    background-color: yellowgreen;
-    color: white;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    text-align: center;
-    top: 40%;
-    left: 30%;
-    opacity: 0;
-}
-
-.collection .card:hover input {
-    opacity: 1;
-    transition: 1s;
-}
-
-.collection input:hover {
-    background-color: lightcoral;
-    transition: 0.5s;
-}
-
-.collection img {
-    height: 355px;
-    width: 350px;
-}
-
-.parallex {
-    background: url(font.jpg) no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
+main{
     width: 100%;
 }
 
-.parallex h1 {
-    font-size: 55px;
-    font-weight: 700;
+h2 {
+    color: var(--color-5);
+    margin: 2em 0;
 }
 
-.parallex p {
+
+/* nucba store ******************** */
+section.mainSection {
+    background: url(../assets/font2.jpg);
+    background-size: cover;
+    width: 100%;
+    background-attachment: fixed;
+}
+
+div.mainRow {
+    width: 1080px;
+    text-align: center;
+    padding: 2em 0.5em;
+
+}
+
+div.mainRow p {
+    color: var(--color-blanco-0);
+}
+/* nucba store ******************** */
+
+
+/* productos ******************** */
+.boxProduct{
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+    background-color: white;
+    margin: 0.5em;
+    border: 1px solid #00000031;
+    border-radius: 10px;
+}
+
+
+div.imgProduct {
+    position: relative;
+    background: url(../assets/remera-2.png);
+    background-size: cover;
+    object-fit: cover;
+    background-position: bottom;
+    width: 100%;
+    height: 340px;
+    border-radius: 10px 10px 0 0;
+}
+
+.boxProduct img.boxForm {
+position: absolute;
+bottom: 0px;
+width: 100%;
+left: 0px;
+}
+
+.boxProduct h3.precio {
+    position: absolute;
+    margin: 10px;
+    padding: 4px;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--color-blanco-0);
+    opacity: 1;
+    color: yellow;
     font-size: 22px;
+    background-color:  #000000be;
+    bottom: 15px;
+    right: 0px;
 }
 
-.btn2 {
-    height: 40px;
-    width: 110px;
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-    outline: none;
-    border: none;
-    border-radius: 4px;
+.boxProduct h3.precio small {
+    text-decoration: line-through;
+    font-weight: 200;
+    opacity: 0.6;
+    color: var(--color-blanco-0);
 }
 
-.btn2:hover {
-    background-color: white;
-    color: yellowgreen;
-    transition: 0.3s;
-    border: none;
+.pieBox {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.btn3 {
-    height: 40px;
-    width: 110px;
-    background-color: white;
-    outline: none;
-    border: none;
-    color: yellowgreen;
-    border-radius: 4px;
+.pieBox h3 {
+    margin: 0;
+    color: var(--color-5);
 }
 
-.btn3:hover {
-    background-color: rgb(75, 54, 54);
-    color: white;
-    transition: 0.3s;
-    border: none;
-    outline: none;
+.pieBox button {
+    display: flex;
+    border: 1px solid #00000031;
+    color: var(--color-5);
+    margin: 0 0.2em;
+    font-size: larger;
+    width: 20px;
+    justify-content: center;
+    background: var(--color-white-1);
+    opacity: 1 !important;
 }
 
-.card span {
-    color: burlywood;
-    /* font-weight: 800; */
-    padding-left: 5px;
+.pieBox button:hover {
+    color: white !important;
+    background-color: var(--color-5);
 }
 
-
-/* -------------- */
-
-
-/* 
-.article a {
-    list-style: none;
-    color: black;
-    outline: none;
+.titleSubtitle {
+    width: 100%;
+    text-align: initial;
 }
-
-.article a:hover {
-    color: yellowgreen;
-    transition: 0.3s;
-}
-
-.article p {
-    font-size: 21px;
-}
-
-.article span {
-    color: yellowgreen;
-}
-
-.article small {
-    font-size: 15px;
-} */
+/* productos **********************/
