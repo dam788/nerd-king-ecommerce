@@ -1,6 +1,7 @@
 html {
     background-color: var(--color-5) !important;
 }
+
 body {
     background-color: var(--color-5);
     display: flex;
@@ -14,7 +15,7 @@ main {
     background-color: var(--color-blanco-1);
     width: 400px;
     min-width: 300px;
-    top:110px;
+    top: 110px;
     border-radius: 12px;
     margin: 2em 1em;
     height: fit-content;
@@ -25,7 +26,7 @@ form {
     padding: 2em 2em 0 2em;
 }
 
-h2{
+h2 {
     display: flex;
     align-content: center;
 }
@@ -66,8 +67,6 @@ button:hover {
     opacity: 1 !important;
 }
 
-
-
 button:active {
     opacity: 100%;
     transform: scale(0.98);
@@ -77,14 +76,13 @@ ul {
     list-style: none;
     margin: 0;
     padding: 0;
-  }
+}
 
 li {
     margin: 0px;
     padding: 0px;
     height: 80px;
 }
-
 
 small {
     display: flex;
@@ -98,7 +96,7 @@ small {
     border-radius: 0 0 12px 12px;
 }
 
-.error {
+textarea .is-invalid {
     visibility: visible;
     font-weight: 800;
 }
@@ -107,16 +105,16 @@ small {
 *:-webkit-autofill:hover,
 *:-webkit-autofill:focus,
 *:-webkit-autofill:active {
-  /* use animation hack, if you have hard styled input */
-  transition: all 5000s ease-in-out 0s;
-  transition-property: background-color, color;
-  /* if input has one color, and didn't have bg-image use shadow */
-  /* -webkit-box-shadow: 0 0 0 1000px transparent inset; */
-  /* text color */
-  -webkit-text-fill-color: var(--color-1);
-  color: var(--color-1);
-  /* font weigth */
-  font-weight: 600!important;
+    /* use animation hack, if you have hard styled input */
+    transition: all 5000s ease-in-out 0s;
+    transition-property: background-color, color;
+    /* if input has one color, and didn't have bg-image use shadow */
+    /* -webkit-box-shadow: 0 0 0 1000px transparent inset; */
+    /* text color */
+    -webkit-text-fill-color: var(--color-1);
+    color: var(--color-1);
+    /* font weigth */
+    font-weight: 600!important;
 }
 
 *:focus {
@@ -132,7 +130,7 @@ small {
 }
 
 .exclamation {
-    margin-right:10px;
+    margin-right: 10px;
 }
 
 .linkLogo {
