@@ -11,7 +11,7 @@ body {
     height: 100vh;
 }
 
-.container {
+.container-fluid {
     background-color: #8c98a9;
     height: min-content;
 }
@@ -88,3 +88,33 @@ button:active {
 .linkLogo {
     cursor: pointer;
 }
+
+
+/* header */
+nav {
+    display: flex !important;
+    align-items: unset !important;
+}
+
+.nav-col {
+    display: inline-block;
+    padding: 20px 0;
+    width: 33%;
+    align-content: center;
+}
+
+.nav-col:nth-child(2) {
+    display: flex;
+    place-content: center;
+}
+
+.nav-col:nth-child(3) {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-col ul li {
+    padding: 10px 20px;
+    height: unset !important;
+}
+/* header */

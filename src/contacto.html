@@ -6,12 +6,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- hojas css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./css/general.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/contacto.css">
     <!-- fontazome -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <script defer src="./js/all.min.js"></script>
     <title>Nerd King | Contacto</title>
@@ -20,9 +20,9 @@
 
 <body>
     <!-- header zone -->
-    <!-- <div class="linea"></div> -->
+    <div class="linea"></div>
 
-    <!-- <header>
+    <header>
         <nav>
             <a class="nav-col linkLogo" href="/">
                 <img src="./assets/logo.svg" alt="logotipo de la pagina: nerd king">
@@ -88,11 +88,11 @@
                 </div>
             </div>
         </nav>
-    </header> -->
-    <div class="container mt-5 p-3">
-
-        <div class="row mx-5 justify-content-center align-items-center">
-            <div class="col-6">
+    </header>
+    <div class="container-fluid p-0">
+        <div class="row py-4"></div>
+        <div class="row mx-5 justify-content-center align-items-center pt-5">
+            <div class="col-6 text-light">
                 <p class="blockquote text-left">Si queres informacion sobre cualquiera de nuestros productos o estas interesado en su distribucion, rellena nuestro formulario y nos pondremos en contacto con vos lo antes posible.</p>
                 <p class="blockquote text-left">Muchas gracias.</p> <br>
                 <p class="blockquote text-left"><strong>Direccion: </strong>Enrique Segoviano 08 - La vecindad del chavo</p>
@@ -100,7 +100,7 @@
 
             </div>
             <form class="form m-5 p-5">
-                <div class="form-row">
+                <div class="form-row text-center">
                     <h4 class="h4">
                         Completa este formulario
                     </h4>
@@ -137,18 +137,16 @@
                 <button class="btn btn-dark" type="submit">Publicar</button>
             </form>
         </div>
-
-    </div>
-
-
-    <main>
-        <div class="row-main">
-            <col-main>
-
-            </col-main>
+        <div class="container-fluid bg-light">
+            <div class="row py-5">
+                <div class="col-lg7 mx-auto text-center">
+                    <input type="text" placeholder="Ingresa tu Email">
+                    <button class="btn4 my-5">NEWSLETTER</button>
+                    <p>©losDamis 2020</p>
+                </div>
+            </div>
         </div>
-
-    </main>
+    </div>
 </body>
 <script>
     let emailName = document.getElementById('userSesion').parentNode.parentNode,

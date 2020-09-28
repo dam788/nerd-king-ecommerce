@@ -96,7 +96,7 @@ small {
     border-radius: 0 0 12px 12px;
 }
 
-textarea .is-invalid {
+.error {
     visibility: visible;
     font-weight: 800;
 }

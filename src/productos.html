@@ -6,6 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- hojas css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./css/general.css">
     <link rel="stylesheet" href="./css/header.css">
@@ -87,147 +88,34 @@
 
 
         <main>
-            <section class="mainSection">
-                        <div class="mainRow">
-                            <h1>Nucba store</h1>
-                            <p class="py-3">
-                                Productos 100% Originales, de Nucbers para Nucbers
-                                a un solo click de distancia!
-                            </p>
-                            <button>VER PRODUCTOS</button>
-                        </div>
+            <section class="mainFind">
+                <form>           
+                    <input type="text" class="inputBusca" placeholder="Buscador de Productos">
+                    <button class="botonBusca">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+
             </section>
             <section class="collection">
-                <div class="container">
-                    <h2 class="text-center">Nucba Collection</h2>
-                    
-                    
-                    <div id="prod_#" class="boxProduct">
-                        <div class="imgProduct" alt="imagen de producto">
-                            <img class="boxForm" src="./assets/imgBoxForm.svg">
-                            <h3 class="precio">
-                                <small>$800</small>
-                                $499
-                            </h3>
-                        </div>
-                        <div class="pieBox">
-                            <div class="titleSubtitle">
-                                <h3 class="nombreProd">Remera Bla bla</h3>
-                                <small class="descProd">                    Importada de Chaina bla 
-                                </small>
-                            </div>
-                            <button>
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    
-                    <div id="prod_#" class="boxProduct">
-                        <div class="imgProduct" alt="imagen de producto">
-                            <img class="boxForm" src="./assets/imgBoxForm.svg">
-                            <h3 class="precio">
-                                <small>$800</small>
-                                $499
-                            </h3>
-                        </div>
-                        <div class="pieBox">
-                            <div class="titleSubtitle">
-                                <h3 class="nombreProd">Remera Bla bla</h3>
-                                <small class="descProd">                    Importada de Chaina bla 
-                                </small>
-                            </div>
-                            <button>
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    
-                    <div id="prod_#" class="boxProduct">
-                        <div class="imgProduct" alt="imagen de producto">
-                            <img class="boxForm" src="./assets/imgBoxForm.svg">
-                            <h3 class="precio">
-                                <small>$800</small>
-                                $499
-                            </h3>
-                        </div>
-                        <div class="pieBox">
-                            <div class="titleSubtitle">
-                                <h3 class="nombreProd">Remera Bla bla</h3>
-                                <small class="descProd">                    Importada de Chaina bla 
-                                </small>
-                            </div>
-                            <button>
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    
-                    <div id="prod_#" class="boxProduct">
-                        <div class="imgProduct" alt="imagen de producto">
-                            <img class="boxForm" src="./assets/imgBoxForm.svg">
-                            <h3 class="precio">
-                                <small>$800</small>
-                                $499
-                            </h3>
-                        </div>
-                        <div class="pieBox">
-                            <div class="titleSubtitle">
-                                <h3 class="nombreProd">Remera Bla bla</h3>
-                                <small class="descProd">                    Importada de Chaina bla 
-                                </small>
-                            </div>
-                            <button>
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    
-                    <div id="prod_#" class="boxProduct">
-                        <div class="imgProduct" alt="imagen de producto">
-                            <img class="boxForm" src="./assets/imgBoxForm.svg">
-                            <h3 class="precio">
-                                <small>$800</small>
-                                $499
-                            </h3>
-                        </div>
-                        <div class="pieBox">
-                            <div class="titleSubtitle">
-                                <h3 class="nombreProd">Remera Bla bla</h3>
-                                <small class="descProd">                    Importada de Chaina bla 
-                                </small>
-                            </div>
-                            <button>
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </div>
-                    </div>
-
+                <div id="insertProducts" class="container">                                 
+                    <h2>Productos</h2>
 
                 </div>
             </section>
 
-
+            <div class="container-fluid bg-light">
+                <div class="row py-5">
+                    <div class="col-lg7 mx-auto text-center">
+                        <input type="text" placeholder="Ingresa tu Email" class="newsletter">
+                        <button class="btn4 my-5 newsletter">NEWSLETTER</button>
+                        <p class="mt-5">©losDamis 2020</p>
+                    </div>
+                </div>
+            </div>
         </main>
-
-        <!-- <div class="footer">
-            <section class="contact bg-light pt-5 text-center">
-                <div class="container">
-                    <div class="row py-3">
-                        <div class="col-lg7 mx-auto">
-                            <input type="text" placeholder="Ingresa tu Email">
-                            <button class="btn4 my-5">NEWSLETTER</button>
-                            <p>©losDamis 2020</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div> -->
 </body>
-
+<script src="./js/productos.js"></script>
 <script>
     let emailName = document.getElementById('userSesion').parentNode.parentNode,
         storage = window.localStorage;
