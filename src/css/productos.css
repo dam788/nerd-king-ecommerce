@@ -79,9 +79,21 @@ section .collection h2 {
 }
 
 .boxProduct:hover{
+    transform: translateY(-1px);
     border: 1px solid #0000003b; 
-    box-shadow: 0 2px 6px var(--sombra-1);  
+    box-shadow: 0px 12px 16px #00000012;
 }
+
+.noResults{
+    grid-column: 1/-1;
+    margin: 20px 0;
+}
+
+.noResults img {
+    max-width: 450px;
+    min-width: 330px;
+}
+
 
 div.imgProduct {
     overflow: hidden;
@@ -94,7 +106,7 @@ div.imgProduct {
     border-radius: 10px 10px 0 0;
 }
 
-img:hover{
+.imgProduct img:hover{
     animation: crece 1s 1s ease-in-out forwards alternate;
 }
 

@@ -172,7 +172,7 @@ let productos = [
     },
     {
         "id": "20",
-        "categoria":"remera",
+        "categoria":"gorra",
         "producto": "gorra code",
         "descripcion": "estampa code",
         "precioAntes": 1200,
@@ -326,12 +326,11 @@ let productos = [
 ]
 
 const insertProducts = document.getElementById('insertProducts');
-const input          = document.querySelector('input');
+const input          = document.getElementsByClassName('inputBusca')[0];
 const formulario     = document.querySelector('form');
 
 const dibujaProductos = () => {
     return productos.map( prod => {
-
         let items =
         `
         <div id="prod_#" class="boxProduct">
@@ -353,16 +352,55 @@ const dibujaProductos = () => {
             </div>
         </div>
         `
-    insertProducts.innerHTML += items;
-
+    return insertProducts.innerHTML += items;
     })
 }
 
 const fitrar = (e) => {
     e.preventDefault();
     let inputFind = input.value;
+    if(!inputFind) return null;
+    formulario.reset();
+    let filtrado = productos.filter( prod =>
+         prod.producto.includes(inputFind) ||
+         prod.categoria.includes(inputFind)
+         );
+    insertProducts.innerHTML = '';
+    
+    if(filtrado==""){
+        let noResults = 
+            `
+            <div  class="noResults">
+                <img src="./assets/no_results.svg"></img>
+            </div>
+            `;
+        return insertProducts.innerHTML = noResults;
+    }
 
-
+    filtrado.map( prod => {
+        let items =
+            `
+            <div id="prod_#" class="boxProduct">
+                <div class="imgProduct" alt="imagen de producto">
+                    <img class="boxForm" src="${prod.img}">
+                    <h3 class="precio">
+                        <small>$${prod.precioAntes}</small>
+                        $${prod.precioDespues}
+                    </h3>
+                </div>
+                <div class="pieBox">
+                    <div class="titleSubtitle">
+                        <h3 class="nombreProd">${prod.producto}</h3>
+                        <small class="descProd">${prod.descripcion}</small>
+                    </div>
+                    <button>
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            `
+        return insertProducts.innerHTML += items;
+    })
 }
 
 
@@ -375,7 +413,7 @@ const fitrar = (e) => {
 
 
 
-
-
-dibujaProductos();
-formulario.addEventListener( 'submit', fitrar );
+ (init = () => {
+    dibujaProductos();
+    formulario.addEventListener( 'submit', fitrar );
+})()
