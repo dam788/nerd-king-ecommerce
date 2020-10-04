@@ -90,3 +90,54 @@ nav {
     width: 100%;
     cursor: pointer;
 }
+
+/* hamburguesa */
+.hamburger {
+    display: none;
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    padding: 10px;
+    color: var(--color-5);
+    border-radius: 20px;
+    transition: all 200ms linear;
+}
+
+.hamburger:hover {
+    border-radius: 20px;
+    background-color: var(--color-blanco-0);
+    box-shadow: 0 2px 6px var(--sombra-1);
+    color: var(--color-3);
+}
+
+.hamburger:active {
+    transform: scale(0.95);
+}
+
+
+/* hamburguesa */
+
+
+
+
+@media (max-width: 991px){
+
+    .nav-col:nth-child(2),
+    .nav-col:nth-child(3) {
+        display: none !important;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+}
+
+
+/* TAREAS *******************
+
+- seguir con los menus porque no esta terminado.
+- seguir con los media queries.
+- seguir con la validacion de carrito en local storage.
+
+TAREAS *********************/

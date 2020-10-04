@@ -404,16 +404,5 @@ const fitrar = (e) => {
 }
 
 
-
-
-
-
-
-
-
-
-
- (init = () => {
-    dibujaProductos();
-    formulario.addEventListener( 'submit', fitrar );
-})()
+dibujaProductos();
+formulario.addEventListener( 'submit', fitrar );
