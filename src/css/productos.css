@@ -9,10 +9,11 @@ h2 {
 
 /* buscador */
 section.mainFind {
-    background: var(--color-5);
-    background-size: cover;
+    background: url('../assets/background_products.png'), repeat-x;
+    background-color: var(--color-5);
     width: 100%;
     background-attachment: fixed;
+    padding: 15px 0;
 }
 
 form {
