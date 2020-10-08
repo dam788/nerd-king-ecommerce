@@ -1,7 +1,6 @@
-let productos = [
-    {
+let productos = [{
         "id": "1",
-        "categoria":"remera",
+        "categoria": "remera",
         "producto": "java",
         "descripcion": "mellange java",
         "precioAntes": 1200,
@@ -10,7 +9,7 @@ let productos = [
     },
     {
         "id": "2",
-        "categoria":"remera",
+        "categoria": "remera",
         "producto": "nasa",
         "descripcion": "producto especial",
         "precioAntes": 1200,
@@ -19,7 +18,7 @@ let productos = [
     },
     {
         "id": "3",
-        "categoria":"remera",
+        "categoria": "remera",
         "producto": "Github",
         "descripcion": "remera github",
         "precioAntes": 1500,
@@ -28,7 +27,7 @@ let productos = [
     },
     {
         "id": "4",
-        "categoria":"remera",
+        "categoria": "remera",
         "producto": "js minimalist",
         "descripcion": "pequeño logo",
         "precioAntes": 1000,
@@ -37,7 +36,7 @@ let productos = [
     },
     {
         "id": "5",
-        "categoria":"remera",
+        "categoria": "remera",
         "producto": "GO!",
         "descripcion": "remera golang celeste",
         "precioAntes": 1700,
@@ -46,7 +45,7 @@ let productos = [
     },
     {
         "id": "6",
-        "categoria":"remera",
+        "categoria": "remera",
         "producto": "GIT",
         "descripcion": "remera gris git",
         "precioAntes": 1300,
@@ -55,7 +54,7 @@ let productos = [
     },
     {
         "id": "7",
-        "categoria":"remera",
+        "categoria": "remera",
         "producto": "droid",
         "descripcion": "remera android",
         "precioAntes": 1700,
@@ -64,7 +63,7 @@ let productos = [
     },
     {
         "id": "8",
-        "categoria":"remera",
+        "categoria": "remera",
         "producto": "kotlin",
         "descripcion": "flotlin soft",
         "precioAntes": 1800,
@@ -73,7 +72,7 @@ let productos = [
     },
     {
         "id": "9",
-        "categoria":"buzo",
+        "categoria": "buzo",
         "producto": "batik go",
         "descripcion": "batik largo",
         "precioAntes": 3500,
@@ -82,7 +81,7 @@ let productos = [
     },
     {
         "id": "10",
-        "categoria":"buzo",
+        "categoria": "buzo",
         "producto": "batik git",
         "descripcion": "batik largo",
         "precioAntes": 3500,
@@ -91,7 +90,7 @@ let productos = [
     },
     {
         "id": "11",
-        "categoria":"buzo",
+        "categoria": "buzo",
         "producto": "js minimalist",
         "descripcion": "pequeño logo ",
         "precioAntes": 3500,
@@ -100,7 +99,7 @@ let productos = [
     },
     {
         "id": "12",
-        "categoria":"buzo",
+        "categoria": "buzo",
         "producto": "droid",
         "descripcion": "buzo android",
         "precioAntes": 3500,
@@ -109,7 +108,7 @@ let productos = [
     },
     {
         "id": "13",
-        "categoria":"buzo",
+        "categoria": "buzo",
         "producto": "Kotlin",
         "descripcion": "buzo kotlin color",
         "precioAntes": 3200,
@@ -118,7 +117,7 @@ let productos = [
     },
     {
         "id": "14",
-        "categoria":"buzo",
+        "categoria": "buzo",
         "producto": "node minimalist",
         "descripcion": "node minimalist",
         "precioAntes": 3200,
@@ -127,7 +126,7 @@ let productos = [
     },
     {
         "id": "15",
-        "categoria":"buzo",
+        "categoria": "buzo",
         "producto": "js negro",
         "descripcion": "buzo javascript",
         "precioAntes": 3200,
@@ -136,7 +135,7 @@ let productos = [
     },
     {
         "id": "16",
-        "categoria":"buzo",
+        "categoria": "buzo",
         "producto": "kotlin negro",
         "descripcion": "buzo negro logo color",
         "precioAntes": 3200,
@@ -145,7 +144,7 @@ let productos = [
     },
     {
         "id": "17",
-        "categoria":"buzo",
+        "categoria": "buzo",
         "producto": "buzo nucba",
         "descripcion": "buzo especial nucba",
         "precioAntes": 4000,
@@ -154,7 +153,7 @@ let productos = [
     },
     {
         "id": "18",
-        "categoria":"gorra",
+        "categoria": "gorra",
         "producto": "gorra java",
         "descripcion": "bordado java",
         "precioAntes": 1200,
@@ -163,7 +162,7 @@ let productos = [
     },
     {
         "id": "19",
-        "categoria":"gorra",
+        "categoria": "gorra",
         "producto": "c++",
         "descripcion": "estampa c++",
         "precioAntes": 1200,
@@ -172,7 +171,7 @@ let productos = [
     },
     {
         "id": "20",
-        "categoria":"gorra",
+        "categoria": "gorra",
         "producto": "gorra code",
         "descripcion": "estampa code",
         "precioAntes": 1200,
@@ -181,7 +180,7 @@ let productos = [
     },
     {
         "id": "21",
-        "categoria":"gorra",
+        "categoria": "gorra",
         "producto": "gorra droid",
         "descripcion": "estampado android",
         "precioAntes": 1200,
@@ -190,7 +189,7 @@ let productos = [
     },
     {
         "id": "22",
-        "categoria":"gorra",
+        "categoria": "gorra",
         "producto": "gorra nucba",
         "descripcion": "logo especial nucba",
         "precioAntes": 1200,
@@ -199,7 +198,7 @@ let productos = [
     },
     {
         "id": "23",
-        "categoria":"gorra",
+        "categoria": "gorra",
         "producto": "gorra js",
         "descripcion": "estampa javascript",
         "precioAntes": 1200,
@@ -208,7 +207,7 @@ let productos = [
     },
     {
         "id": "24",
-        "categoria":"pad",
+        "categoria": "pad",
         "producto": "pad js",
         "descripcion": "cheats js",
         "precioAntes": 600,
@@ -217,7 +216,7 @@ let productos = [
     },
     {
         "id": "25",
-        "categoria":"pad",
+        "categoria": "pad",
         "producto": "pad js",
         "descripcion": "logo js",
         "precioAntes": 600,
@@ -226,7 +225,7 @@ let productos = [
     },
     {
         "id": "26",
-        "categoria":"pad",
+        "categoria": "pad",
         "producto": "pad git",
         "descripcion": "cheats git",
         "precioAntes": 600,
@@ -235,7 +234,7 @@ let productos = [
     },
     {
         "id": "27",
-        "categoria":"pad",
+        "categoria": "pad",
         "producto": "pad linux",
         "descripcion": "cheats linux",
         "precioAntes": 600,
@@ -244,7 +243,7 @@ let productos = [
     },
     {
         "id": "28",
-        "categoria":"pad",
+        "categoria": "pad",
         "producto": "pad mario",
         "descripcion": "estampa mario bros",
         "precioAntes": 600,
@@ -253,7 +252,7 @@ let productos = [
     },
     {
         "id": "30",
-        "categoria":"bolso",
+        "categoria": "bolso",
         "producto": "bolso go",
         "descripcion": "golang celeste",
         "precioAntes": 2700,
@@ -262,7 +261,7 @@ let productos = [
     },
     {
         "id": "31",
-        "categoria":"bolso",
+        "categoria": "bolso",
         "producto": "bolso go",
         "descripcion": "go historieta",
         "precioAntes": 2700,
@@ -271,7 +270,7 @@ let productos = [
     },
     {
         "id": "32",
-        "categoria":"bolso",
+        "categoria": "bolso",
         "producto": "bolso go",
         "descripcion": "go en 3d",
         "precioAntes": 2700,
@@ -280,7 +279,7 @@ let productos = [
     },
     {
         "id": "33",
-        "categoria":"bolso",
+        "categoria": "bolso",
         "producto": "bolso js",
         "descripcion": "estampa javascript",
         "precioAntes": 2700,
@@ -289,7 +288,7 @@ let productos = [
     },
     {
         "id": "34",
-        "categoria":"bolso",
+        "categoria": "bolso",
         "producto": "mochila js",
         "descripcion": "amarilla especial",
         "precioAntes": 5000,
@@ -298,7 +297,7 @@ let productos = [
     },
     {
         "id": "35",
-        "categoria":"bolso",
+        "categoria": "bolso",
         "producto": "bolso js",
         "descripcion": "js node",
         "precioAntes": 2700,
@@ -307,7 +306,7 @@ let productos = [
     },
     {
         "id": "36",
-        "categoria":"bolso",
+        "categoria": "bolso",
         "producto": "bolso wp",
         "descripcion": "motivo wordpress",
         "precioAntes": 2700,
@@ -316,7 +315,7 @@ let productos = [
     },
     {
         "id": "37",
-        "categoria":"bolso",
+        "categoria": "bolso",
         "producto": "riñonera kit nucba",
         "descripcion": "",
         "precioAntes": 6700,
@@ -326,13 +325,13 @@ let productos = [
 ]
 
 const insertProducts = document.getElementById('insertProducts');
-const input          = document.getElementsByClassName('inputBusca')[0];
-const formulario     = document.querySelector('form');
+const input = document.getElementsByClassName('inputBusca')[0];
+const formulario = document.querySelector('form');
 
 const dibujaProductos = () => {
-    return productos.map( prod => {
+    return productos.map(prod => {
         let items =
-        `
+            `
         <div id="prod_#" class="boxProduct">
             <div class="imgProduct" alt="imagen de producto">
                 <img class="boxForm" src="${prod.img}">
@@ -352,23 +351,23 @@ const dibujaProductos = () => {
             </div>
         </div>
         `
-    return insertProducts.innerHTML += items;
+        return insertProducts.innerHTML += items;
     })
 }
 
 const fitrar = (e) => {
     e.preventDefault();
     let inputFind = input.value;
-    if(!inputFind) return null;
+    if (!inputFind) return null;
     formulario.reset();
-    let filtrado = productos.filter( prod =>
-         prod.producto.includes(inputFind) ||
-         prod.categoria.includes(inputFind)
-         );
+    let filtrado = productos.filter(prod =>
+        prod.producto.includes(inputFind) ||
+        prod.categoria.includes(inputFind)
+    );
     insertProducts.innerHTML = '';
-    
-    if(filtrado==""){
-        let noResults = 
+
+    if (filtrado == "") {
+        let noResults =
             `
             <div  class="noResults">
                 <img src="./assets/no_results.svg"></img>
@@ -377,7 +376,7 @@ const fitrar = (e) => {
         return insertProducts.innerHTML = noResults;
     }
 
-    filtrado.map( prod => {
+    filtrado.map(prod => {
         let items =
             `
             <div id="prod_#" class="boxProduct">
@@ -413,7 +412,7 @@ const fitrar = (e) => {
 
 
 
- (init = () => {
+(init = () => {
     dibujaProductos();
-    formulario.addEventListener( 'submit', fitrar );
+    formulario.addEventListener('submit', fitrar);
 })()

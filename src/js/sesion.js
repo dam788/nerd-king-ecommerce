@@ -1,10 +1,10 @@
 // seleccion del DOM
-const email         = document.getElementById('email'),
-      pass          = document.getElementById('pass'),
-      submitBtn     = document.getElementById('goForm'),
-      message       = document.getElementById('message'),
-      emailName     = document.getElementById('userSesion'),
-      storage       = window.localStorage;
+const email = document.getElementById('email'),
+    pass = document.getElementById('pass'),
+    submitBtn = document.getElementById('goForm'),
+    message = document.getElementById('message'),
+    emailName = document.getElementById('userSesion'),
+    storage = window.localStorage;
 
 const entroEnFoco = elem => elem.className = 'enfoco';
 
@@ -14,34 +14,34 @@ const sendForm = (e) => {
 
     e.preventDefault();
 
-    if( validMail() && validPass() ){
+    if (validMail() && validPass()) {
         StorageMail()
         return window.location.href = '/';
-    } 
+    }
 
-    if(!validMail()){
-
-        message.classList.add('error');
-        setTimeout(()=>{
-            message.classList.remove('error');
-        },2000);
-        return ;
-    } 
-    if(!validPass()){
+    if (!validMail()) {
 
         message.classList.add('error');
-        setTimeout(()=>{
+        setTimeout(() => {
             message.classList.remove('error');
-        },2000);
-        return ;
-    } 
-} 
+        }, 2000);
+        return;
+    }
+    if (!validPass()) {
+
+        message.classList.add('error');
+        setTimeout(() => {
+            message.classList.remove('error');
+        }, 2000);
+        return;
+    }
+}
 
 const validMail = () => {
 
-    let{ value } = email;
+    let { value } = email;
 
-    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;   
+    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     // local Storage
     storage.setItem('userMail', value);
@@ -50,20 +50,19 @@ const validMail = () => {
 }
 
 const validPass = () => {
-    let{ value } = pass;
+    let { value } = pass;
 
     const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
 
-    return regex.test(value);  
+    return regex.test(value);
 }
 
 const StorageMail = () => {
 
-   if(storage.getItem('userMail')){
-    emailName.innerHTML = `${storage.getItem('userMail')}`
-    
-   }
+    if (storage.getItem('userMail')) {
+        emailName.innerHTML = `${storage.getItem('userMail')}`
+
+    }
 }
 
 submitBtn.addEventListener('click', sendForm);
-

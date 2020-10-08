@@ -58,6 +58,7 @@
                                 0
                                 <i class="fas fa-shopping-cart"></i>
                             </span>
+                        </a>
                     </li>
                     <li>
                         <a href="/src/sesion.html">
@@ -76,42 +77,28 @@
     <main>
         <form method="post">
             <h2 class="sesion">
-                <i class="far fa-user user"></i>
-                Iniciar Sesión
+                <i class="far fa-user user"></i> Iniciar Sesión
             </h2>
-                <ul>
-                    <li class="form-control">
-                        <label for="email">E-mail</label>
-                        <input 
-                            id="email" 
-                            type="text" 
-                            name="email" 
-                            onfocus="entroEnFoco(this)"
-                            onblur="salioDeFoco(this)"
-                        />
-                    </li>
+            <ul>
+                <li class="form-control">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="text" name="email" onfocus="entroEnFoco(this)" onblur="salioDeFoco(this)" />
+                </li>
 
-                    <li class="form-control">
-                        <label for="pass"/>
-                            Contraseña
-                        </label> 
-                        <input 
-                            id="pass"
-                            type="text" 
-                            name="pass" 
-                            onfocus="entroEnFoco(this)"
-                            onblur="salioDeFoco(this)"
-                        />
-                    </li>
-                    <button id="goForm" type="submit">Iniciar Sesión</button>
-                </ul>
-            </form>
-            <small id="message" class="...">
+                <li class="form-control">
+                    <label for="pass" /> Contraseña
+                    <input id="pass" type="text" name="pass" onfocus="entroEnFoco(this)" onblur="salioDeFoco(this)" />
+                </li>
+                <button id="goForm" type="submit">Iniciar Sesión</button>
+            </ul>
+        </form>
+        <small id="message" class="...">
                 <i class="fas fa-exclamation-triangle exclamation"></i>
                 Datos incorrectos, verificar los campos ...
             </small>
-        </main>
+    </main>
 
 </body>
 <script src="./js/sesion.js"></script>
+
 </html>
