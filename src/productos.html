@@ -121,47 +121,7 @@
 </body>
 <script src="./js/productos.js"></script>
 <script>
-    let emailName = document.getElementById('userSesion').parentNode.parentNode,
-        storage = window.localStorage;
-    let subMenu = document.getElementsByClassName('menuFlotante')[0];
 
-    const StorageMail = () => {
-        if (storage.getItem('userMail')) {
-            emailName.innerHTML =
-                `
-          <a class="useActive">
-                          <span id="userSesion">
-                ${storage.getItem('userMail')}
-                <i class="fas fa-user"></i>
-              </span>
-          </a>
-          `
-        }
-    }
-    StorageMail();
-
-    emailName.addEventListener('click', () => {
-        storage.getItem('userMail') ?
-            subMenu.classList.toggle('visible') :
-            subMenu.classList.remove('visible')
-    });
-
-    let exit = document.getElementById('exit');
-    exit.addEventListener('click', () => {
-        storage.clear();
-        if (!storage.getItem('userMail')) {
-            emailName.innerHTML =
-                `
-          <a class="session" href="/src/sesion.html">
-              <span id="userSesion">
-                Iniciar Sesion
-                <i class="fas fa-user"></i>
-              </span>
-          </a>
-          `;
-        }
-        subMenu.classList.remove('visible');
-    })
 </script>
 
 </html>

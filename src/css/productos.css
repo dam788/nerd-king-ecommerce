@@ -276,7 +276,7 @@ button:active {
 /* correccion newsletter por bootstrap */
 
 /* media  queries */
-@media (max-width: 991px){
+@media (max-width: 992px){
     .container {
         grid-template-columns: repeat(2,1fr);
     }
