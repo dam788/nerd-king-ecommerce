@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- fontazome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script defer src="./js/all.min.js"></script>
     <title>Nerd King | Principal</title>
 </head>
@@ -52,6 +53,7 @@
                   0
                   <i class="fas fa-shopping-cart"></i>
                 </span>
+                        </a>
                     </li>
                     <li>
                         <a class="session" href="/src/sesion.html">
@@ -82,7 +84,7 @@
         </nav>
     </header>
     <!-- carousel -->
-    </div>
+
     <div class="carousel">
         <div class="carousel-inner">
             <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
@@ -115,22 +117,35 @@
                 </li>
             </ol>
         </div>
-        <main>
-            <section class="mainSection">
-                <div class="mainRow">
-                    <h1>Nucba store</h1>
-                    <p class="py-3">
-                        Productos 100% Originales, de Nucbers para Nucbers
-                        a un solo click de distancia!
-                    </p>   
-                    <a href="/src/productos.html">
-                        <button> 
-                            VER PRODUCTOS
-                        </button>
-                    </a>
+    </div>
+    <main>
+        <section class="mainSection">
+            <div class="mainRow">
+                <h1>Nucba store</h1>
+                <p class="py-3">
+                    Productos 100% Originales, de Nucbers para Nucbers a un solo click de distancia!
+                </p>
+                <button><a href="/src/productos.html">
+                    <span>
+                        VER PRODUCTOS
+        </span>
+                </a></button>
+            </div>
+        </section>
+
+        <div class="container-fluid bg-light">
+            <div class="row py-5">
+                <div class="col-lg7 mx-auto text-center">
+                    <input type="text" placeholder="Ingresa tu Email" class="newsletter">
+                    <button class="btn4 my-5 newsletter">NEWSLETTER</button>
+                    <p class="mt-5">©losDamis 2020</p>
+
                 </div>
-            </section>
-        </main>
+            </div>
+        </div>
+
+    </main>
+
 </body>
 <script>
     let emailName = document.getElementById('userSesion').parentNode.parentNode,
