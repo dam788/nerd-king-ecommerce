@@ -368,22 +368,23 @@
         e.preventDefault();
     
         inputFind = input.value;
-        !inputFind 
-            ? null
-            : filtrado = productos.filter( prod =>
-                prod.producto.includes(inputFind) ||
-                prod.categoria.includes(inputFind)
-            );    
+        if (!inputFind) {
+          return;
+        }
+        filtrado = productos.filter(
+          (prod) =>
+            prod.producto.includes(inputFind) ||
+            prod.categoria.includes(inputFind)
+        );    
         limpiarForm();
         
-        if(filtrado==""){
-            noResults = 
-                `
+        if (filtrado == '') {
+          noResults = `
                 <div  class="noResults">
                     <img src="./assets/no_results.svg"></img>
                 </div>
                 `;
-            return insertProducts.innerHTML = noResults;
+          return (insertProducts.innerHTML = noResults);
         }
         filtrado.map( prod => {
             items =

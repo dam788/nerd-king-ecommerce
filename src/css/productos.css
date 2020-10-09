@@ -275,6 +275,32 @@ button:active {
 }
 /* correccion newsletter por bootstrap */
 
+/* nucba store ******************** */
+
+section.mainSection {
+    background: url(../assets/font2.jpg);
+    background-size: cover;
+    width: 100%;
+    background-attachment: fixed;
+    top: 80px;
+}
+
+div.mainRow {
+    width: 1080px;
+    text-align: center;
+    padding: 2em 0.5em;
+}
+
+div.mainRow p {
+    color: var(--color-blanco-0);
+}
+
+.mainRow span {
+    color: white;
+}
+
+/* nucba store ******************** */
+
 /* media  queries */
 @media (max-width: 992px){
     .container {
