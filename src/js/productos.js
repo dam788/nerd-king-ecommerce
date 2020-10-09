@@ -369,7 +369,7 @@
 
                 console.log(cantActual)
 
-            };
+            }
 
             button.addEventListener('click', addToCart);
 
