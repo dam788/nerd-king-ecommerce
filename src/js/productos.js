@@ -369,7 +369,6 @@
 
             addToCart = (e) => {
                 // e.preventDefault();
-             
                 arrCart.push(items);
 
                 cantActual += 1;
