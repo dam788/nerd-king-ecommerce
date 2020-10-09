@@ -329,9 +329,11 @@
     const insertProducts = document.getElementById('insertProducts'),
         input = document.getElementsByClassName('inputBusca')[0],
         formulario = document.querySelector('form');
-
-    let cartNum = document.getElementById('cartNum');
-    console.log(cartNum)
+        let cartNum = document.getElementById('cartNum');
+        let cantActual = parseInt(cartNum.textContent);
+    // let cartNum = document.getElementById('cartNum').value;
+    
+  
 
     const dibujaProductos = () => {
         return productos.map(prod => {
@@ -350,7 +352,7 @@
                         <h3 class="nombreProd">${prod.producto}</h3>
                         <small class="descProd">${prod.descripcion}</small>
                     </div>
-                    <button class="btnCart" id="btnCart">
+                    <button class="btnCart" id="btnCart" onclick="addToCart(this)">
                         <i class="fas fa-shopping-cart"></i>
                     </button>
                 </div>
@@ -359,16 +361,21 @@
             insertProducts.innerHTML += items;
 
 
+            const arrCart = [];
             const button = document.getElementById('btnCart');
+            // const button = document.querySelectorAll('#btnCart');
+       
+            
 
+            addToCart = (e) => {
+                // e.preventDefault();
+             
+                arrCart.push(items);
 
-            const addToCart = (e) => {
-                e.preventDefault();
+                cantActual += 1;
+                console.log(cantActual);
 
-                let cantActual = cartNum.value + 1;
-
-                console.log(cantActual)
-
+                cartNum.innerHTML = cantActual;
             }
 
             button.addEventListener('click', addToCart);
@@ -422,7 +429,7 @@
                             <h3 class="nombreProd">${prod.producto}</h3>
                             <small class="descProd">${prod.descripcion}</small>
                         </div>
-                        <button class="btnCart" id="btnCart">
+                        <button class="btnCart" id="btnCart" onclick="addToCart(this)">
                             <i class="fas fa-shopping-cart"></i>
                         </button>
                     </div>
