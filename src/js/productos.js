@@ -330,9 +330,9 @@
   const insertProducts = document.getElementById('insertProducts'),
     input = document.getElementsByClassName('inputBusca')[0],
     formulario = document.querySelector('form');
-
   let cartNum = document.getElementById('cartNum');
-  console.log(cartNum);
+  let cantActual = parseInt(cartNum.textContent);
+  // let cartNum = document.getElementById('cartNum').value;
 
   const dibujaProductos = () => {
     return productos.map((prod) => {
@@ -350,7 +350,7 @@
                         <h3 class="nombreProd">${prod.producto}</h3>
                         <small class="descProd">${prod.descripcion}</small>
                     </div>
-                    <button class="btnCart" id="btnCart">
+                    <button class="btnCart" id="btnCart" onclick="addToCart(this)">
                         <i class="fas fa-shopping-cart"></i>
                     </button>
                 </div>
@@ -358,14 +358,19 @@
             `;
       insertProducts.innerHTML += items;
 
+      const arrCart = [];
       const button = document.getElementById('btnCart');
+      // const button = document.querySelectorAll('#btnCart');
 
-      const addToCart = (e) => {
-        e.preventDefault();
+      addToCart = (e) => {
+        // e.preventDefault();
 
-        let cantActual = cartNum.value + 1;
+        arrCart.push(items);
 
+        cantActual += 1;
         console.log(cantActual);
+
+        cartNum.innerHTML = cantActual;
       };
 
       button.addEventListener('click', addToCart);
@@ -378,13 +383,13 @@
     e.preventDefault();
 
     inputFind = input.value;
-    if (!inputFind) {
-      return;
-    }
-    filtrado = productos.filter(
-      (prod) =>
-        prod.producto.includes(inputFind) || prod.categoria.includes(inputFind)
-    );
+    !inputFind
+      ? null
+      : (filtrado = productos.filter(
+          (prod) =>
+            prod.producto.includes(inputFind) ||
+            prod.categoria.includes(inputFind)
+        ));
     limpiarForm();
 
     if (filtrado == '') {
@@ -410,7 +415,7 @@
                             <h3 class="nombreProd">${prod.producto}</h3>
                             <small class="descProd">${prod.descripcion}</small>
                         </div>
-                        <button class="btnCart" id="btnCart">
+                        <button class="btnCart" id="btnCart" onclick="addToCart(this)">
                             <i class="fas fa-shopping-cart"></i>
                         </button>
                     </div>
