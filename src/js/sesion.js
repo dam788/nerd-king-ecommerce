@@ -5,6 +5,8 @@ const email = document.getElementById('email'),
     message = document.getElementById('message'),
     emailName = document.getElementById('userSesion'),
     storage = window.localStorage;
+    const menu = document.getElementById('menu');
+    const persiana = document.getElementById('persiana');
 
 const entroEnFoco = elem => elem.className = 'enfoco';
 
@@ -65,4 +67,10 @@ const StorageMail = () => {
     }
 }
 
+const desplegaMenu = () => {
+  console.log('click');
+  persiana.classList.toggle('active');
+};
+
 submitBtn.addEventListener('click', sendForm);
+menu.addEventListener('click', desplegaMenu);

@@ -331,8 +331,10 @@
     input = document.getElementsByClassName('inputBusca')[0],
     formulario = document.querySelector('form');
   let cartNum = document.getElementById('cartNum');
-  let cantActual = parseInt(cartNum.textContent);
+  // let cantActual = parseInt(cartNum.textContent);
   // let cartNum = document.getElementById('cartNum').value;
+  const menu = document.getElementById('menu');
+  const persiana = document.getElementById('persiana');
 
   const dibujaProductos = () => {
     return productos.map((prod) => {
@@ -430,12 +432,18 @@
     insertProducts.innerHTML = '';
   };
 
+  const desplegaMenu = () => {
+    console.log('click');
+    persiana.classList.toggle('active');
+  };
+
   const init = () => {
     document.addEventListener('DOMContentLoaded', () => {
       dibujaProductos();
 
       // eventDom
       formulario.addEventListener('submit', fitrar);
+      menu.addEventListener('click', desplegaMenu);
     });
   };
 

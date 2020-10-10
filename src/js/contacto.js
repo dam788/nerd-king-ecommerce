@@ -4,6 +4,8 @@ const nombre = document.getElementById('validationServer01');
 const apellido = document.getElementById('validationServer02');
 const email = document.getElementById('exampleInputEmail1');
 const mensaje = document.getElementById('validationTextarea');
+const menu = document.getElementById('menu');
+const persiana = document.getElementById('persiana');
 
 class Usuario {
     constructor(nombre, apellido, email, mensaje) {
@@ -30,8 +32,10 @@ const envioForm = (e) => {
     console.log(array)
 }
 
-
-
-
+const desplegaMenu = () => {
+  console.log('click');
+  persiana.classList.toggle('active');
+};
 
 boton.addEventListener('click', envioForm);
+menu.addEventListener('click', desplegaMenu);

@@ -224,6 +224,11 @@ nav {
     justify-content: flex-end;
 }
 
+.nav-col:nth-child(4) {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .nav-col ul li {
     padding: 10px 20px;
     height: unset !important;
