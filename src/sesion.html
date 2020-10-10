@@ -29,23 +29,23 @@
                 <ul>
                     <li>
                         <a href="/">
-                            <span>
-                                Inicio
-                            </span>
+                            <span active>
+                  Inicio
+                </span>
                         </a>
                     </li>
                     <li>
-                        <a href="productos.html">
+                        <a href="/src/productos.html">
                             <span>
-                                Productos
-                            </span>
+                  Productos
+                </span>
                         </a>
                     </li>
                     <li>
-                        <a href="contacto.html">
+                        <a href="/src/contacto.html">
                             <span>
-                                Contacto
-                            </span>
+                  Contacto
+                </span>
                         </a>
                     </li>
                 </ul>
@@ -55,20 +55,40 @@
                     <li>
                         <a href="carrito.html">
                             <span>
-                                0
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
+                  0
+                  <i class="fas fa-shopping-cart"></i>
+                </span>
                         </a>
                     </li>
                     <li>
-                        <a href="/src/sesion.html">
-                            <span id="userSesion" active>
-                                Iniciar Sesion
-                                <i class="fas fa-user"></i>
-                            </span>
+                        <a class="session" href="/src/sesion.html">
+                            <span id="userSesion">
+                  Iniciar Sesion
+                  <i class="fas fa-user"></i>
+                </span>
                         </a>
                     </li>
                 </ul>
+                <div class="menuFlotante">
+                    <ul>
+                        <li id="userChange">
+                            <a href="/src/sesion.html">
+                                <i class="fas fa-user-circle"></i> cambiar de Usuario
+                            </a>
+                        </li>
+                    </ul>
+                    <ul id="exit">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-sign-out-alt"></i> salir
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div  id="menu" class="hamburger">
+                <span>Menú</span>
+                <i class="fas fa-bars"></i>
             </div>
         </nav>
     </header>
@@ -98,6 +118,25 @@
             </small>
     </main>
 
+    <div id="persiana" class="persiana">
+        <ul>
+            <li>
+                <a href="/">
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="/src/productos.html">
+                    <span>Productos</span>
+                </a>
+            </li>
+            <li>
+                <a href="/src/contacto.html">
+                    <span>Contacto</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 </body>
 <script src="./js/sesion.js"></script>
 

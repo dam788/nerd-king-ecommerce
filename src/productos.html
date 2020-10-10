@@ -27,23 +27,23 @@
                 <ul>
                     <li>
                         <a href="/">
-                            <span>
-                                    Inicio
-                                </span>
+                            <span active>
+                  Inicio
+                </span>
                         </a>
                     </li>
                     <li>
                         <a href="/src/productos.html">
-                            <span active>
-                                    Productos
-                                </span>
+                            <span>
+                  Productos
+                </span>
                         </a>
                     </li>
                     <li>
                         <a href="/src/contacto.html">
                             <span>
-                                    Contacto
-                                </span>
+                  Contacto
+                </span>
                         </a>
                     </li>
                 </ul>
@@ -57,14 +57,15 @@
                                 </span>
                                 
                             <i class="fas fa-shopping-cart"></i>
+
                         </a>
                     </li>
                     <li>
-                        <a href="/src/sesion.html">
+                        <a class="session" href="/src/sesion.html">
                             <span id="userSesion">
-                                    Iniciar Sesion
-                                    <i class="fas fa-user"></i>
-                                </span>
+                  Iniciar Sesion
+                  <i class="fas fa-user"></i>
+                </span>
                         </a>
                     </li>
                 </ul>
@@ -84,10 +85,10 @@
                         </li>
                     </ul>
                 </div>
-                <div class="hamburger">
-                    <span>Menú</span>
-                    <i class="fas fa-bars"></i>
-                </div>
+            </div>
+            <div  id="menu" class="hamburger">
+                <span>Menú</span>
+                <i class="fas fa-bars"></i>
             </div>
         </nav>
     </header>
@@ -101,7 +102,19 @@
                         <i class="fas fa-search"></i>
                     </button>
             </form>
-
+        </section>
+        <section class="mainSection">
+            <div class="mainRow">
+                <h1>Nucba store</h1>
+                <p class="py-3">
+                    Productos 100% Originales, de Nucbers para Nucbers a un solo click de distancia!
+                </p>
+                <button><a href="/src/productos.html">
+                    <span>
+                        VER PRODUCTOS
+                    </span>
+                </a></button>
+            </div>
         </section>
         <section class="collection">
             <div id="insertProducts" class="container">
@@ -199,6 +212,41 @@
             </div>
         </div>
     </main>
+
+    <div id="persiana" class="persiana">
+        <ul>
+            <li>
+                <a href="/">
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="/src/productos.html">
+                    <span>Productos</span>
+                </a>
+            </li>
+            <li>
+                <a href="/src/contacto.html">
+                    <span>Contacto</span>
+                </a>
+            </li>
+        </ul>
+            <div class="persianaCartUser">
+                <a class="session" href="#">
+                    <span class="text-secondary">
+                        0
+                        <i class="fas fa-shopping-cart"></i>
+                     </span>
+                </a>
+                <a class="session" href="/src/sesion.html">
+                    <span id="userSesion" class="text-secondary">
+                        Iniciar Sesion
+                        <i class="fas fa-user"></i>
+                    </span>
+                </a>
+            </div>
+    </div>
+
 </body>
 <script src="./js/productos.js"></script>
 <script>

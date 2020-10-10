@@ -501,44 +501,52 @@
                //hasta aca
             }
 
-            button.addEventListener('click', addToCart);
+      insertProducts.innerHTML += items;
 
+      const arrCart = [];
+      const button = document.getElementById('btnCart');
+      // const button = document.querySelectorAll('#btnCart');
 
-        })
-    }
+      addToCart = (e) => {
+        // e.preventDefault();
 
+        arrCart.push(items);
 
+        cantActual += 1;
+        console.log(cantActual);
 
-    const fitrar = (e) => {
-        let filtrado,
-            inputFind,
-            noResults,
-            items;
+        cartNum.innerHTML = cantActual;
+      };
 
-        e.preventDefault();
+      button.addEventListener('click', addToCart);
+    });
+  };
 
-        inputFind = input.value;
-        !inputFind
-            ?
-            null :
-            filtrado = productos.filter(prod =>
-                prod.producto.includes(inputFind) ||
-                prod.categoria.includes(inputFind)
-            );
-        limpiarForm();
+  const fitrar = (e) => {
+    let filtrado, inputFind, noResults, items;
 
-        if (filtrado == "") {
-            noResults =
-                `
-                <div  class="noResults">
+    e.preventDefault();
+
+    inputFind = input.value;
+    !inputFind
+      ? null
+      : (filtrado = productos.filter(
+          (prod) =>
+            prod.producto.includes(inputFind) ||
+            prod.categoria.includes(inputFind)
+        ));
+    limpiarForm();
+
+    if (filtrado == '') {
+      noResults = `
+                <div class="noResults">
                     <img src="./assets/no_results.svg"></img>
                 </div>
                 `;
-            return insertProducts.innerHTML = noResults;
-        }
-        filtrado.map(prod => {
-            items =
-                `
+      return (insertProducts.innerHTML = noResults);
+    }
+    filtrado.map((prod) => {
+      items = `
                 <div id="prod_#" class="boxProduct">
                     <div class="imgProduct" alt="imagen de producto">
                         <img class="boxForm" src="${prod.img}">
@@ -557,74 +565,70 @@
                         </button>
                     </div>
                 </div>
-                `
-            return insertProducts.innerHTML += items;
-
-        })
-    }
-
-
-
-
-    const limpiarForm = () => {
-        formulario.reset();
-        insertProducts.innerHTML = '';
-    }
-
-
-
-
-    const init = () => {
-        document.addEventListener('DOMContentLoaded', () => {
-            dibujaProductos();
-
-            // eventDom
-            formulario.addEventListener('submit', fitrar);
-        })
-    }
+                `;
+      return (insertProducts.innerHTML += items);
+    });
+  };
 
 
 
     init();
 
+  const limpiarForm = () => {
+    formulario.reset();
+    insertProducts.innerHTML = '';
+  };
 
 
+  const desplegaMenu = () => {
+    console.log('click');
+    persiana.classList.toggle('active');
+  };
 
+  const init = () => {
+    document.addEventListener('DOMContentLoaded', () => {
+      dibujaProductos();
 
-    /*******************************************************
+      // eventDom
+      formulario.addEventListener('submit', fitrar);
+      menu.addEventListener('click', desplegaMenu);
+    });
+  };
+
+  init();
+
+  /*******************************************************
                         LOCAL STORAGE
     *******************************************************/
-    let emailName = document.getElementById('userSesion').parentNode.parentNode,
-        storage = window.localStorage;
-    let subMenu = document.getElementsByClassName('menuFlotante')[0];
+  let emailName = document.getElementById('userSesion').parentNode.parentNode,
+    storage = window.localStorage;
+  let subMenu = document.getElementsByClassName('menuFlotante')[0];
 
-    const StorageMail = () => {
-        if (storage.getItem('userMail')) {
-            emailName.innerHTML =
-                `
+  const StorageMail = () => {
+    if (storage.getItem('userMail')) {
+      emailName.innerHTML = `
         <a class="useActive">
                         <span id="userSesion">
                 ${storage.getItem('userMail')}
                 <i class="fas fa-user"></i>
             </span>
         </a>
-        `
-        }
+        `;
     }
-    StorageMail();
+  };
+  StorageMail();
 
-    emailName.addEventListener('click', () => {
-        storage.getItem('userMail') ?
-            subMenu.classList.toggle('visible') :
-            subMenu.classList.remove('visible')
-    });
+  emailName.addEventListener('click', () => {
+    storage.getItem('userMail')
+      ? subMenu.classList.toggle('visible')
+      : subMenu.classList.remove('visible');
+  });
 
-    let exit = document.getElementById('exit');
-    exit.addEventListener('click', () => {
-        storage.clear();
-        if (!storage.getItem('userMail')) {
-            emailName.innerHTML =
-                `
+  let exit = document.getElementById('exit');
+  exit.addEventListener('click', () => {
+    storage.clear();
+    if (!storage.getItem('userMail')) {
+      emailName.innerHTML = `
         <a class="session" href="/src/sesion.html">
             <span id="userSesion">
                 Iniciar Sesion
@@ -632,10 +636,7 @@
             </span>
         </a>
         `;
-        }
-        subMenu.classList.remove('visible');
-    })
-
-
-
-})()
+    }
+    subMenu.classList.remove('visible');
+  });
+})();
