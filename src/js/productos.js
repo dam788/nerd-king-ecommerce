@@ -332,6 +332,7 @@
         formulario = document.querySelector('form'),
         menu = document.getElementById('menu'),
         persiana = document.getElementById('persiana'),
+        shoppingCartItemsContainer = document.querySelector('.shoppingCartItemsContainer'),
         arrCart = [];
       
     let cartNum = document.getElementById('cartNum');
@@ -366,11 +367,11 @@
         
         const button = document.getElementById('btnCart');
         // const button = document.querySelectorAll('#btnCart');
-  
+ 
         addToCart = (e) => {
             // e.preventDefault();
-           arrCart.push(this.prod);
-           console.dir(prod)
+           arrCart.push(prod);
+           console.dir(arrCart)
             let cantActual = parseInt(cartNum.textContent);
             
             cantActual = arrCart.length;
@@ -387,10 +388,6 @@
             addItemToShoppingCart(itemTitle, itemPrice, itemImage);
     
            //de aca
-        //    const addToShoppingCartButtons = document.getElementById('btnCart');
-        // addToShoppingCartButtons.forEach((addToCartButton) => {
-        //         addToCartButton.addEventListener('click', addToCartClicked);
-// });
 
             const comprarButton = document.querySelector('.comprarButton');
             comprarButton.addEventListener('click', comprarButtonClicked);
@@ -441,7 +438,8 @@
                 </div>`;
             shoppingCartRow.innerHTML = shoppingCartContent;
             shoppingCartItemsContainer.append(shoppingCartRow);
-            console.log(shoppingCartItemsContainer)
+            // console.log(shoppingCartItemsContainer)
+            
             document
                 .querySelector('.buttonDelete')
                 .addEventListener('click', removeShoppingCartItem);
@@ -494,8 +492,9 @@
                 updateShoppingCartTotal();
             }
   
-        button.addEventListener('click', addToCart);
+        
         }  
+        button.addEventListener('click', addToCart);
     });
     };
   
