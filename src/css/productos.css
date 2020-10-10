@@ -275,6 +275,43 @@ button:active {
 }
 /* correccion newsletter por bootstrap */
 
+
+
+/* ? SHOPPING CART */
+.shopping-cart{
+    box-sizing: border-box;
+    width: 100%;
+}
+.shopping-cart-items {
+    padding: 20px 0px;
+  }
+  
+  .shopping-cart-header {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .shopping-cart-image {
+    max-width: 100px;
+    border-radius: 20px;
+  }
+  
+  .shopping-cart-quantity-input {
+    max-width: 45px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #eee;
+    padding: 5px;
+  }
+  
+  .shopping-cart-total {
+    min-height: 96px;
+  }
+  
+
+
+
+
+
 /* media  queries */
 @media (max-width: 992px){
     .container {

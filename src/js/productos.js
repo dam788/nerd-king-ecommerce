@@ -328,11 +328,12 @@
         // selectores
     const insertProducts = document.getElementById('insertProducts'),
         input = document.getElementsByClassName('inputBusca')[0],
-        formulario = document.querySelector('form');
+        formulario = document.querySelector('form'),
+        shoppingCartItemsContainer = document.querySelector('.shoppingCartItemsContainer'),
+        arrCart = [];
+
         let cartNum = document.getElementById('cartNum');
-        let cantActual = parseInt(cartNum.textContent);
-    // let cartNum = document.getElementById('cartNum').value;
-    
+     
   
 
     const dibujaProductos = () => {
@@ -352,7 +353,7 @@
                         <h3 class="nombreProd">${prod.producto}</h3>
                         <small class="descProd">${prod.descripcion}</small>
                     </div>
-                    <button class="btnCart" id="btnCart" onclick="addToCart(this)">
+                    <button class="btnCart" id="btnCart" onclick="addToCart(this.parentNode)">
                         <i class="fas fa-shopping-cart"></i>
                     </button>
                 </div>
@@ -361,7 +362,7 @@
             insertProducts.innerHTML += items;
 
 
-            const arrCart = [];
+            console.dir(items)
             const button = document.getElementById('btnCart');
             // const button = document.querySelectorAll('#btnCart');
        
@@ -369,12 +370,135 @@
 
             addToCart = (e) => {
                 // e.preventDefault();
-                arrCart.push(items);
-
-                cantActual += 1;
-                console.log(cantActual);
-
+               arrCart.push(this.prod);
+               console.dir(prod)
+                let cantActual = parseInt(cartNum.textContent);
+                
+                cantActual = arrCart.length;
                 cartNum.innerHTML = cantActual;
+               
+               console.log(arrCart.length);
+               const button = e.target;
+                // const item = button.closest('.item');
+              
+                const itemTitle = document.querySelector('.nombreProd').textContent;
+                const itemPrice = document.querySelector('.precio').textContent;
+                const itemImage = document.querySelector('.boxForm').src;
+              
+                addItemToShoppingCart(itemTitle, itemPrice, itemImage);
+            //    function addToCartClicked(e) {
+                
+            //   }
+              
+               //de aca
+            //    const addToShoppingCartButtons = document.getElementById('btnCart');
+            // addToShoppingCartButtons.forEach((addToCartButton) => {
+            //         addToCartButton.addEventListener('click', addToCartClicked);
+// });
+
+                const comprarButton = document.querySelector('.comprarButton');
+                comprarButton.addEventListener('click', comprarButtonClicked);
+
+
+
+
+                function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
+                const elementsTitle = shoppingCartItemsContainer.getElementsByClassName(
+                    'shoppingCartItemTitle'
+                );
+                for (let i = 0; i < elementsTitle.length; i++) {
+                    if (elementsTitle[i].innerText === itemTitle) {
+                    let elementQuantity = elementsTitle[
+                        i
+                    ].parentElement.parentElement.parentElement.querySelector(
+                        '.shoppingCartItemQuantity'
+                    );
+                    elementQuantity.value++;
+                    $('.toast').toast('show');
+                    updateShoppingCartTotal();
+                    return;
+                    }
+                }
+
+                const shoppingCartRow = document.createElement('div');
+                const shoppingCartContent = `
+                <div class="row shoppingCartItem">
+                        <div class="col-6">
+                            <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                                <img src=${prod.img} class="shopping-cart-image">
+                                <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0">${prod.producto}</h6>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                                <p class="item-price mb-0 shoppingCartItemPrice">$${prod.precioDespues}</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div
+                                class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
+                                <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
+                                    value="1">
+                                <button class="btn btn-danger buttonDelete" type="button">X</button>
+                            </div>
+                        </div>
+                    </div>`;
+                shoppingCartRow.innerHTML = shoppingCartContent;
+                shoppingCartItemsContainer.append(shoppingCartRow);
+
+                document
+                    .querySelector('.buttonDelete')
+                    .addEventListener('click', removeShoppingCartItem);
+
+                    document
+                    .querySelector('.shoppingCartItemQuantity')
+                    .addEventListener('change', quantityChanged);
+
+                updateShoppingCartTotal();
+                }
+
+                function updateShoppingCartTotal() {
+                        let total = 0;
+                        const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
+
+                        const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
+
+                shoppingCartItems.forEach((shoppingCartItem) => {
+                        const shoppingCartItemPriceElement = document.querySelector(
+                        '.shoppingCartItemPrice'
+                    );
+                    const shoppingCartItemPrice = Number(
+                            shoppingCartItemPriceElement.textContent.replace('$', '')
+                    );
+                    const shoppingCartItemQuantityElement = document.querySelector(
+                    '.shoppingCartItemQuantity'
+                    );
+                    const shoppingCartItemQuantity = Number(
+                        shoppingCartItemQuantityElement.value
+                    );
+                    total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
+                });
+                shoppingCartTotal.innerHTML = `$ ${total.toFixed(2)}`;
+                }
+
+                function removeShoppingCartItem(event) {
+                    const buttonClicked = event.target;
+                    buttonClicked.closest('.shoppingCartItem').remove();
+                    updateShoppingCartTotal();
+                }
+
+                function quantityChanged(event) {
+                    const input = event.target;
+                    input.value <= 0 ? (input.value = 1) : null;
+                    updateShoppingCartTotal();
+                }
+
+                function comprarButtonClicked() {
+                    shoppingCartItemsContainer.innerHTML = '';
+                    updateShoppingCartTotal();
+                }
+
+               //hasta aca
             }
 
             button.addEventListener('click', addToCart);
@@ -458,6 +582,7 @@
             formulario.addEventListener('submit', fitrar);
         })
     }
+
 
 
     init();
