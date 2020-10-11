@@ -10,7 +10,6 @@ const menu = document.getElementById('menu');
 const persiana = document.getElementById('persiana');
 
 const desplegaMenu = () => {
-  console.log('click');
   persiana.classList.toggle('active');
 };
 
