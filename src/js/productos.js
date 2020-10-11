@@ -332,6 +332,8 @@
     formulario = document.querySelector('form'),
     menu = document.getElementById('menu'),
     persiana = document.getElementById('persiana'),
+    findNucba = document.getElementById('findNucba'),
+    nucbaSection = document.querySelector('.mainSection'),
     shoppingCartItemsContainer = document.querySelector(
       '.shoppingCartItemsContainer'
     ),
@@ -498,50 +500,50 @@
   };
 
   const fitrar = (e) => {
-    let filtrado, inputFind, noResults, items;
-
     e.preventDefault();
 
-    inputFind = input.value;
-    !inputFind
-      ? null
-      : (filtrado = productos.filter(
+    let inputFind = input.value;
+    if(!inputFind){return null}
+    
+    let filtrado = productos.filter(
           (prod) =>
             prod.producto.includes(inputFind) ||
             prod.categoria.includes(inputFind)
-        ));
+        );
     limpiarForm();
 
     if (filtrado == '') {
-      noResults = `
+      let noResults = `
                   <div  class="noResults">
                       <img src="./assets/no_results.svg"></img>
                   </div>
                   `;
       return (insertProducts.innerHTML = noResults);
     }
+    insertProducts.innerHTML = `<h2>${inputFind.toLocaleUpperCase()}</h2>`;
+    
     filtrado.map((prod) => {
-      items = `
-                  <div id="prod_#" class="boxProduct">
-                      <div class="imgProduct" alt="imagen de producto">
-                          <img class="boxForm" src="${prod.img}">
-                          <h3 class="precio">
-                              <small>$${prod.precioAntes}</small>
-                              $${prod.precioDespues}
-                          </h3>
-                      </div>
-                      <div class="pieBox">
-                          <div class="titleSubtitle">
-                              <h3 class="nombreProd">${prod.producto}</h3>
-                              <small class="descProd">${prod.descripcion}</small>
-                          </div>
-                          <button class="btnCart" id="btnCart" onclick="addToCart(this)">
-                              <i class="fas fa-shopping-cart"></i>
-                          </button>
-                      </div>
-                  </div>
-                  `;
-      return (insertProducts.innerHTML += items);
+      let items = `
+        <div id="prod_#" class="boxProduct">
+            <div class="imgProduct" alt="imagen de producto">
+                <img class="boxForm" src="${prod.img}">
+                <h3 class="precio">
+                    <small>$${prod.precioAntes}</small>
+                    $${prod.precioDespues}
+                </h3>
+            </div>
+            <div class="pieBox">
+                <div class="titleSubtitle">
+                    <h3 class="nombreProd">${prod.producto}</h3>
+                    <small class="descProd">${prod.descripcion}</small>
+                </div>
+                <button class="btnCart" id="btnCart" onclick="addToCart(this)">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+        </div>
+        `;
+      return insertProducts.innerHTML += items;
     });
   };
 
@@ -555,6 +557,55 @@
     persiana.classList.toggle('active');
   };
 
+// productos nucba
+
+const nucbaProducts = () => {
+
+  nucbaSection.classList.add('nucBye');
+  setTimeout(()=>{
+    nucbaSection.classList.add('none');
+  },1000)
+
+  let inputFind = 'nucba';
+
+  let filtrado = productos.filter(
+    (prod) =>
+      prod.producto.includes(inputFind) ||
+      prod.categoria.includes(inputFind)
+  );
+  insertProducts.innerHTML = `<h2>${inputFind.toLocaleUpperCase()}</h2>`;
+
+  filtrado.map((prod) => {
+    insertProducts.innerHTML += `
+      <div id="prod_#" class="boxProduct">
+          <div class="imgProduct" alt="imagen de producto">
+              <img class="boxForm" src="${prod.img}">
+              <h3 class="precio">
+                  <small>$${prod.precioAntes}</small>
+                  $${prod.precioDespues}
+              </h3>
+          </div>
+          <div class="pieBox">
+              <div class="titleSubtitle">
+                  <h3 class="nombreProd">${prod.producto}</h3>
+                  <small class="descProd">${prod.descripcion}</small>
+              </div>
+              <button class="btnCart" id="btnCart" onclick="addT(this)">
+                  <i class="fas fa-shopping-cart"></i>
+              </button>
+          </div>
+      </div>
+      `;
+    });
+}
+
+// productos nucba
+
+
+
+
+
+
   const init = () => {
     document.addEventListener('DOMContentLoaded', () => {
       dibujaProductos();
@@ -562,6 +613,7 @@
       // eventDom
       formulario.addEventListener('submit', fitrar);
       menu.addEventListener('click', desplegaMenu);
+      findNucba.addEventListener('click', nucbaProducts )
     });
   };
 
@@ -571,28 +623,28 @@
                           LOCAL STORAGE
       *******************************************************/
   let emailName = document.getElementById('userSesion').parentNode.parentNode;
-  let emailNameMovile = document.getElementById('userSesion');
+  let emailNameMovile = document.getElementById('userSesion2');
   const storage = window.localStorage;
   let subMenu = document.getElementsByClassName('menuFlotante')[0];
 
   const StorageMail = () => {
     if (storage.getItem('userMail')) {
       let nameSesionMovile = `                    
-          <span id="userSesion2" class="text-secondary">
-            ${storage.getItem('userMail')}
-            <i class="fas fa-user"></i>
-            <button id ="exitMovile" class="remCart btn btn-sm btn-info">
-              salir
-            </button>
-          </span>`;
+             <span id="userSesion2" class="text-secondary">
+               ${storage.getItem('userMail')}
+               <i class="fas fa-user"></i>
+               <button id ="exitMovile" class="remCart btn btn-sm btn-info">
+                 salir
+               </button>
+             </span>`;
       let nameSesion = `
-          <a class="useActive">
-            <span id="userSesion">
-              ${storage.getItem('userMail')}
-              <i class="fas fa-user"></i>
-            </span>
-          </a>
-          `;
+             <a class="useActive">
+               <span id="userSesion">
+                 ${storage.getItem('userMail')}
+                 <i class="fas fa-user"></i>
+               </span>
+             </a>
+             `;
       emailName.innerHTML = nameSesion;
       emailNameMovile.innerHTML = nameSesionMovile;
     }
@@ -612,40 +664,39 @@
     storage.clear();
     if (!storage.getItem('userMail')) {
       emailName.innerHTML = `
-          <a class="session" href="/src/sesion.html">
-              <span id="userSesion">
-                  Iniciar Sesion
-                  <i class="fas fa-user"></i>
-              </span>
-          </a>
-          `;
+             <a class="session" href="/src/sesion.html">
+                 <span id="userSesion">
+                     Iniciar Sesion
+                     <i class="fas fa-user"></i>
+                 </span>
+             </a>
+             `;
       emailNameMovile.innerHTML = `
-        <span id="userSesion2" class="text-secondary">
-          Iniciar Sesion
-          <i class="fas fa-user"></i>
-        </span>
-        `;
+           <span id="userSesion2" class="text-secondary">
+             Iniciar Sesion
+             <i class="fas fa-user"></i>
+           </span>
+           `;
     }
     subMenu.classList.remove('visible');
   });
   exitMovile.addEventListener('click', () => {
     storage.clear();
-    console.log(exit);
     if (!storage.getItem('userMail')) {
       emailName.innerHTML = `
-          <a class="session" href="/src/sesion.html">
-              <span id="userSesion">
-                  Iniciar Sesion
-                  <i class="fas fa-user"></i>
-              </span>
-          </a>
-          `;
+             <a class="session" href="/src/sesion.html">
+                 <span id="userSesion">
+                     Iniciar Sesion
+                     <i class="fas fa-user"></i>
+                 </span>
+             </a>
+             `;
       emailNameMovile.innerHTML = `
-        <span id="userSesion2" class="text-secondary">
-          Iniciar Sesion
-          <i class="fas fa-user"></i>
-        </span>
-        `;
+           <span id="userSesion2" class="text-secondary">
+             Iniciar Sesion
+             <i class="fas fa-user"></i>
+           </span>
+           `;
     }
     subMenu.classList.remove('visible');
   });

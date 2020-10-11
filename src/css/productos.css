@@ -321,6 +321,19 @@ section.mainSection {
     top: 80px;
 }
 
+.nucBye{
+    animation: hidde 1s ease-out forwards;
+}
+
+@keyframes hidde {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
 div.mainRow {
     width: 1080px;
     text-align: center;
@@ -361,3 +374,8 @@ div.mainRow p {
 }
 
 /* media  queries */
+
+.none{
+    display: none !important;
+
+}
