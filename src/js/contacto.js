@@ -66,6 +66,7 @@ const validMail = () => {
         showError(newsMail);
       }
 }
+
 let client = newsMail.value;
 
 
@@ -94,4 +95,4 @@ const addToNews = () => {
     console.log(newsletter)
   };
 
-sendNews.addEventListener('click', addToNews)
+sendNews.addEventListener('click', addToNews, validMail)

@@ -336,9 +336,10 @@
         arrCart = [];
       
     let cartNum = document.getElementById('cartNum');
+    let cartNum2 = document.getElementById('cartNum2');
     // let cantActual = parseInt(cartNum.textContent);
     // let cartNum = document.getElementById('cartNum').value;
-    
+   
   
     const dibujaProductos = () => {
       return productos.map((prod) => {
@@ -376,6 +377,11 @@
             
             cantActual = arrCart.length;
             cartNum.innerHTML = cantActual;
+            let cantActual2 = parseInt(cartNum2.textContent);
+            
+            cantActual2 = arrCart.length;
+           
+            cartNum2.innerHTML = cantActual + ' producto/s';
            
            console.log(arrCart.length);
            const button = e.target;
