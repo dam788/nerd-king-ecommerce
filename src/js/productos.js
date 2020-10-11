@@ -437,7 +437,6 @@
                 </div>`;
           shoppingCartRow.innerHTML = shoppingCartContent;
           shoppingCartItemsContainer.append(shoppingCartRow);
-          // console.log(shoppingCartItemsContainer)
 
           document
             .querySelector('.buttonDelete')
@@ -503,13 +502,14 @@
     e.preventDefault();
 
     let inputFind = input.value;
-    if(!inputFind){return null}
-    
+    if (!inputFind) {
+      return null;
+    }
+
     let filtrado = productos.filter(
-          (prod) =>
-            prod.producto.includes(inputFind) ||
-            prod.categoria.includes(inputFind)
-        );
+      (prod) =>
+        prod.producto.includes(inputFind) || prod.categoria.includes(inputFind)
+    );
     limpiarForm();
 
     if (filtrado == '') {
@@ -521,7 +521,7 @@
       return (insertProducts.innerHTML = noResults);
     }
     insertProducts.innerHTML = `<h2>${inputFind.toLocaleUpperCase()}</h2>`;
-    
+
     filtrado.map((prod) => {
       let items = `
         <div id="prod_#" class="boxProduct">
@@ -543,7 +543,7 @@
             </div>
         </div>
         `;
-      return insertProducts.innerHTML += items;
+      return (insertProducts.innerHTML += items);
     });
   };
 
@@ -553,30 +553,27 @@
   };
 
   const desplegaMenu = () => {
-    console.log('click');
     persiana.classList.toggle('active');
   };
 
-// productos nucba
+  // productos nucba
 
-const nucbaProducts = () => {
+  const nucbaProducts = () => {
+    nucbaSection.classList.add('nucBye');
+    setTimeout(() => {
+      nucbaSection.classList.add('none');
+    }, 1000);
 
-  nucbaSection.classList.add('nucBye');
-  setTimeout(()=>{
-    nucbaSection.classList.add('none');
-  },1000)
+    let inputFind = 'nucba';
 
-  let inputFind = 'nucba';
+    let filtrado = productos.filter(
+      (prod) =>
+        prod.producto.includes(inputFind) || prod.categoria.includes(inputFind)
+    );
+    insertProducts.innerHTML = `<h2>${inputFind.toLocaleUpperCase()}</h2>`;
 
-  let filtrado = productos.filter(
-    (prod) =>
-      prod.producto.includes(inputFind) ||
-      prod.categoria.includes(inputFind)
-  );
-  insertProducts.innerHTML = `<h2>${inputFind.toLocaleUpperCase()}</h2>`;
-
-  filtrado.map((prod) => {
-    insertProducts.innerHTML += `
+    filtrado.map((prod) => {
+      insertProducts.innerHTML += `
       <div id="prod_#" class="boxProduct">
           <div class="imgProduct" alt="imagen de producto">
               <img class="boxForm" src="${prod.img}">
@@ -597,14 +594,9 @@ const nucbaProducts = () => {
       </div>
       `;
     });
-}
+  };
 
-// productos nucba
-
-
-
-
-
+  // productos nucba
 
   const init = () => {
     document.addEventListener('DOMContentLoaded', () => {
@@ -613,7 +605,7 @@ const nucbaProducts = () => {
       // eventDom
       formulario.addEventListener('submit', fitrar);
       menu.addEventListener('click', desplegaMenu);
-      findNucba.addEventListener('click', nucbaProducts )
+      findNucba.addEventListener('click', nucbaProducts);
     });
   };
 
