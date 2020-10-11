@@ -332,7 +332,8 @@
           formulario = document.querySelector('form'),
           menu = document.getElementById('menu'),
           persiana = document.getElementById('persiana'),
-          button = document.querySelectorAll('this.btnCart'),
+          button = document.querySelectorAll('btnCart'),
+          nameProd = document.querySelectorAll('nombreProd'),
           arrCart = [];
         
       let cartNum = document.getElementById('cartNum'),
@@ -369,37 +370,25 @@
         // const button = document.getElementById('btnCart');
        
  
-        function addToCart() {
-          let produ = clienteA;
-         if (!newsletter.includes(cliente)) {
-              newsletter.push(cliente);
-              alert(`Te mantendremos al tanto de novedades a ${newsMail.value}, gracias conan!`)
-          } else {
-              alert(`Che ${newsMail.value}, ya estas en nuestra base de datos mostro!!`)
-          }
-      }
-     
-      console.log(newsletter)
-    
-
-
-        // addToCart = (e) => {
-        //     // e.preventDefault();
-        //    arrCart.push(prod);
-        //    console.log(arrCart)
-        //     let cantActual = parseInt(cartNum.textContent);
+        
+        addToCart = (e) => {
+          let produc = 
+            // e.preventDefault();
+           arrCart.push(prod);
+           console.log(arrCart)
+            let cantActual = parseInt(cartNum.textContent);
             
-        //     cantActual = arrCart.length;
-        //     cartNum.innerHTML = cantActual;
-        //     let cantActual2 = parseInt(cartNum2.textContent);
+            cantActual = arrCart.length;
+            cartNum.innerHTML = cantActual;
+            let cantActual2 = parseInt(cartNum2.textContent);
             
-        //     cantActual2 = arrCart.length;
+            cantActual2 = arrCart.length;
            
-        //     cartNum2.innerHTML = cantActual + ' producto/s';
+            cartNum2.innerHTML = cantActual + ' producto/s';
            
-        //    console.log(arrCart.length);
+           console.log(arrCart.length);
           
-        // }
+        }
         
     })
     button.addEventListener('click', addToCart);
