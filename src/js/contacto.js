@@ -71,14 +71,14 @@ let client = newsMail.value;
 
 
 const addToNews = () => {
+
     let clienteA = newsMail.value;
     console.log(clienteA)
     yaEsta()
 
     function yaEsta() {
         let cliente = clienteA;
-       
-        if (!newsletter.includes(cliente)) {
+       if (!newsletter.includes(cliente)) {
             newsletter.push(cliente);
             alert(`Te mantendremos al tanto de novedades a ${newsMail.value}, gracias conan!`)
         } else {
