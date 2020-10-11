@@ -116,3 +116,86 @@ function comprarButtonClicked() {
   shoppingCartItemsContainer.innerHTML = '';
   updateShoppingCartTotal();
 }
+
+
+// storage
+let emailName = document.getElementById('userSesion').parentNode.parentNode;
+let emailNameMovile = document.getElementById('userSesion2');
+const storage = window.localStorage;
+let subMenu = document.getElementsByClassName('menuFlotante')[0];
+
+const StorageMail = () => {
+  if (storage.getItem('userMail')) {
+    let nameSesionMovile = `                    
+        <span id="userSesion2" class="text-secondary">
+          ${storage.getItem('userMail')}
+          <i class="fas fa-user"></i>
+          <button id ="exitMovile" class="remCart btn btn-sm btn-info">
+            salir
+          </button>
+        </span>`;
+    let nameSesion = `
+        <a class="useActive">
+          <span id="userSesion">
+            ${storage.getItem('userMail')}
+            <i class="fas fa-user"></i>
+          </span>
+        </a>
+        `;
+    emailName.innerHTML = nameSesion;
+    emailNameMovile.innerHTML = nameSesionMovile;
+  }
+};
+StorageMail();
+
+emailName.addEventListener('click', () => {
+  storage.getItem('userMail')
+    ? subMenu.classList.toggle('visible')
+    : subMenu.classList.remove('visible');
+});
+
+let exit = document.getElementById('exit');
+let exitMovile = document.getElementById('exitMovile');
+
+exit.addEventListener('click', () => {
+  storage.clear();
+  if (!storage.getItem('userMail')) {
+    emailName.innerHTML = `
+        <a class="session" href="/src/sesion.html">
+            <span id="userSesion">
+                Iniciar Sesion
+                <i class="fas fa-user"></i>
+            </span>
+        </a>
+        `;
+    emailNameMovile.innerHTML = `
+      <span id="userSesion2" class="text-secondary">
+        Iniciar Sesion
+        <i class="fas fa-user"></i>
+      </span>
+      `;
+  }
+  subMenu.classList.remove('visible');
+});
+exitMovile.addEventListener('click', () => {
+  storage.clear();
+  console.log(exit);
+  if (!storage.getItem('userMail')) {
+    emailName.innerHTML = `
+        <a class="session" href="/src/sesion.html">
+            <span id="userSesion">
+                Iniciar Sesion
+                <i class="fas fa-user"></i>
+            </span>
+        </a>
+        `;
+    emailNameMovile.innerHTML = `
+      <span id="userSesion2" class="text-secondary">
+        Iniciar Sesion
+        <i class="fas fa-user"></i>
+      </span>
+      `;
+  }
+  subMenu.classList.remove('visible');
+});
+// storage

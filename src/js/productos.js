@@ -418,9 +418,10 @@
                 return;
                 }
             }
+          }
 
-            const shoppingCartRow = document.createElement('div');
-            const shoppingCartContent = `
+          const shoppingCartRow = document.createElement('div');
+          const shoppingCartContent = `
             <div class="row shoppingCartItem">
                     <div class="col-6">
                         <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
@@ -442,93 +443,95 @@
                         </div>
                     </div>
                 </div>`;
-            shoppingCartRow.innerHTML = shoppingCartContent;
-            shoppingCartItemsContainer.append(shoppingCartRow);
-            // console.log(shoppingCartItemsContainer)
-            
-            document
-                .querySelector('.buttonDelete')
-                .addEventListener('click', removeShoppingCartItem);
+          shoppingCartRow.innerHTML = shoppingCartContent;
+          shoppingCartItemsContainer.append(shoppingCartRow);
+          // console.log(shoppingCartItemsContainer)
 
-            document
-                .querySelector('.shoppingCartItemQuantity')
-                .addEventListener('change', quantityChanged);
+          document
+            .querySelector('.buttonDelete')
+            .addEventListener('click', removeShoppingCartItem);
 
-            updateShoppingCartTotal();
-            }
+          document
+            .querySelector('.shoppingCartItemQuantity')
+            .addEventListener('change', quantityChanged);
 
-            function updateShoppingCartTotal() {
-                    let total = 0;
-                    const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
+          updateShoppingCartTotal();
+        }
 
-                    const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
+        function updateShoppingCartTotal() {
+          let total = 0;
+          const shoppingCartTotal = document.querySelector(
+            '.shoppingCartTotal'
+          );
 
-            shoppingCartItems.forEach((shoppingCartItem) => {
-                    const shoppingCartItemPriceElement = document.querySelector(
-                    '.shoppingCartItemPrice'
-                );
-                const shoppingCartItemPrice = Number(
-                        shoppingCartItemPriceElement.textContent.replace('$', '')
-                );
-                const shoppingCartItemQuantityElement = document.querySelector(
-                '.shoppingCartItemQuantity'
-                );
-                const shoppingCartItemQuantity = Number(
-                    shoppingCartItemQuantityElement.value
-                );
-                total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
-            });
-            shoppingCartTotal.innerHTML = `$ ${total.toFixed(2)}`;
-            }
+          const shoppingCartItems = document.querySelectorAll(
+            '.shoppingCartItem'
+          );
 
-            function removeShoppingCartItem(event) {
-                const buttonClicked = event.target;
-                buttonClicked.closest('.shoppingCartItem').remove();
-                updateShoppingCartTotal();
-            }
+          shoppingCartItems.forEach((shoppingCartItem) => {
+            const shoppingCartItemPriceElement = document.querySelector(
+              '.shoppingCartItemPrice'
+            );
+            const shoppingCartItemPrice = Number(
+              shoppingCartItemPriceElement.textContent.replace('$', '')
+            );
+            const shoppingCartItemQuantityElement = document.querySelector(
+              '.shoppingCartItemQuantity'
+            );
+            const shoppingCartItemQuantity = Number(
+              shoppingCartItemQuantityElement.value
+            );
+            total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
+          });
+          shoppingCartTotal.innerHTML = `$ ${total.toFixed(2)}`;
+        }
 
-            function quantityChanged(event) {
-                const input = event.target;
-                input.value <= 0 ? (input.value = 1) : null;
-                updateShoppingCartTotal();
-            }
+        function removeShoppingCartItem(event) {
+          const buttonClicked = event.target;
+          buttonClicked.closest('.shoppingCartItem').remove();
+          updateShoppingCartTotal();
+        }
 
-            function comprarButtonClicked() {
-                shoppingCartItemsContainer.innerHTML = '';
-                updateShoppingCartTotal();
-            }
-  
-        
-        }  
-        button.addEventListener('click', addToCart);
+        function quantityChanged(event) {
+          const input = event.target;
+          input.value <= 0 ? (input.value = 1) : null;
+          updateShoppingCartTotal();
+        }
+
+        function comprarButtonClicked() {
+          shoppingCartItemsContainer.innerHTML = '';
+          updateShoppingCartTotal();
+        }
+      };
+      button.addEventListener('click', addToCart);
     });
-    };
-  
-    const fitrar = (e) => {
-      let filtrado, inputFind, noResults, items;
-  
-      e.preventDefault();
-  
-      inputFind = input.value;
-      !inputFind
-        ? null
-        : (filtrado = productos.filter(
-            (prod) =>
-              prod.producto.includes(inputFind) ||
-              prod.categoria.includes(inputFind)
-          ));
-      limpiarForm();
-  
-      if (filtrado == '') {
-        noResults = `
+  };
+
+  const fitrar = (e) => {
+    let filtrado, inputFind, noResults, items;
+
+    e.preventDefault();
+
+    inputFind = input.value;
+    !inputFind
+      ? null
+      : (filtrado = productos.filter(
+          (prod) =>
+            prod.producto.includes(inputFind) ||
+            prod.categoria.includes(inputFind)
+        ));
+    limpiarForm();
+
+    if (filtrado == '') {
+      noResults = `
                   <div  class="noResults">
                       <img src="./assets/no_results.svg"></img>
                   </div>
                   `;
-        return (insertProducts.innerHTML = noResults);
-      }
-      filtrado.map((prod) => {
-        items = `
+      return (insertProducts.innerHTML = noResults);
+    }
+    filtrado.map((prod) => {
+      items = `
                   <div id="prod_#" class="boxProduct">
                       <div class="imgProduct" alt="imagen de producto">
                           <img class="boxForm" src="${prod.img}">
@@ -548,64 +551,77 @@
                       </div>
                   </div>
                   `;
-        return (insertProducts.innerHTML += items);
-      });
-    };
-  
-    const limpiarForm = () => {
-      formulario.reset();
-      insertProducts.innerHTML = '';
-    };
-  
-    const desplegaMenu = () => {
-      console.log('click');
-      persiana.classList.toggle('active');
-    };
-  
-    const init = () => {
-      document.addEventListener('DOMContentLoaded', () => {
-        dibujaProductos();
-  
-        // eventDom
-        formulario.addEventListener('submit', fitrar);
-        menu.addEventListener('click', desplegaMenu);
-      });
-    };
-  
-    init();
-  
-    /*******************************************************
+      return (insertProducts.innerHTML += items);
+    });
+  };
+
+  const limpiarForm = () => {
+    formulario.reset();
+    insertProducts.innerHTML = '';
+  };
+
+  const desplegaMenu = () => {
+    console.log('click');
+    persiana.classList.toggle('active');
+  };
+
+  const init = () => {
+    document.addEventListener('DOMContentLoaded', () => {
+      dibujaProductos();
+
+      // eventDom
+      formulario.addEventListener('submit', fitrar);
+      menu.addEventListener('click', desplegaMenu);
+    });
+  };
+
+  init();
+
+  /*******************************************************
                           LOCAL STORAGE
       *******************************************************/
-    let emailName = document.getElementById('userSesion').parentNode.parentNode,
-      storage = window.localStorage;
-    let subMenu = document.getElementsByClassName('menuFlotante')[0];
-  
-    const StorageMail = () => {
-      if (storage.getItem('userMail')) {
-        emailName.innerHTML = `
+  let emailName = document.getElementById('userSesion').parentNode.parentNode;
+  let emailNameMovile = document.getElementById('userSesion');
+  const storage = window.localStorage;
+  let subMenu = document.getElementsByClassName('menuFlotante')[0];
+
+  const StorageMail = () => {
+    if (storage.getItem('userMail')) {
+      let nameSesionMovile = `                    
+          <span id="userSesion2" class="text-secondary">
+            ${storage.getItem('userMail')}
+            <i class="fas fa-user"></i>
+            <button id ="exitMovile" class="remCart btn btn-sm btn-info">
+              salir
+            </button>
+          </span>`;
+      let nameSesion = `
           <a class="useActive">
-                          <span id="userSesion">
-                  ${storage.getItem('userMail')}
-                  <i class="fas fa-user"></i>
-              </span>
+            <span id="userSesion">
+              ${storage.getItem('userMail')}
+              <i class="fas fa-user"></i>
+            </span>
           </a>
           `;
-      }
-    };
-    StorageMail();
-  
-    emailName.addEventListener('click', () => {
-      storage.getItem('userMail')
-        ? subMenu.classList.toggle('visible')
-        : subMenu.classList.remove('visible');
-    });
-  
-    let exit = document.getElementById('exit');
-    exit.addEventListener('click', () => {
-      storage.clear();
-      if (!storage.getItem('userMail')) {
-        emailName.innerHTML = `
+      emailName.innerHTML = nameSesion;
+      emailNameMovile.innerHTML = nameSesionMovile;
+    }
+  };
+  StorageMail();
+
+  emailName.addEventListener('click', () => {
+    storage.getItem('userMail')
+      ? subMenu.classList.toggle('visible')
+      : subMenu.classList.remove('visible');
+  });
+
+  let exit = document.getElementById('exit');
+  let exitMovile = document.getElementById('exitMovile');
+
+  exit.addEventListener('click', () => {
+    storage.clear();
+    if (!storage.getItem('userMail')) {
+      emailName.innerHTML = `
           <a class="session" href="/src/sesion.html">
               <span id="userSesion">
                   Iniciar Sesion
@@ -613,7 +629,34 @@
               </span>
           </a>
           `;
-      }
-      subMenu.classList.remove('visible');
-    });
-  })();
+      emailNameMovile.innerHTML = `
+        <span id="userSesion2" class="text-secondary">
+          Iniciar Sesion
+          <i class="fas fa-user"></i>
+        </span>
+        `;
+    }
+    subMenu.classList.remove('visible');
+  });
+  exitMovile.addEventListener('click', () => {
+    storage.clear();
+    console.log(exit);
+    if (!storage.getItem('userMail')) {
+      emailName.innerHTML = `
+          <a class="session" href="/src/sesion.html">
+              <span id="userSesion">
+                  Iniciar Sesion
+                  <i class="fas fa-user"></i>
+              </span>
+          </a>
+          `;
+      emailNameMovile.innerHTML = `
+        <span id="userSesion2" class="text-secondary">
+          Iniciar Sesion
+          <i class="fas fa-user"></i>
+        </span>
+        `;
+    }
+    subMenu.classList.remove('visible');
+  });
+})();
