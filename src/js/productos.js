@@ -1,7 +1,6 @@
 (() => {
   // productos
-  let productos = [
-    {
+  let productos = [{
       id: '1',
       categoria: 'remera',
       producto: 'java',
@@ -344,8 +343,9 @@
   // let cartNum = document.getElementById('cartNum').value;
 
   const dibujaProductos = () => {
-    return productos.map((prod) => {
+    productos.map((prod) => {
       let items = `
+
               <div id="prod_#" class="boxProduct">
                   <div class="imgProduct" alt="imagen de producto">
                       <img class="boxForm" src="${prod.img}">
@@ -365,7 +365,7 @@
                   </div>
               </div>
               `;
-<<<<<<< HEAD
+
       insertProducts.innerHTML += items;
 
       const button = document.getElementById('btnCart');
@@ -448,41 +448,14 @@
             .addEventListener('change', quantityChanged);
 
           updateShoppingCartTotal();
-=======
-        insertProducts.innerHTML += items;
-  
-        // onclick="addToCart(this)"
-        // const button = document.getElementById('btnCart');
-       
- 
-        
-        addToCart = (e) => {
-          let produc = 
-            // e.preventDefault();
-           arrCart.push(prod);
-           console.log(arrCart)
-            let cantActual = parseInt(cartNum.textContent);
-            
-            cantActual = arrCart.length;
-            cartNum.innerHTML = cantActual;
-            let cantActual2 = parseInt(cartNum2.textContent);
-            
-            cantActual2 = arrCart.length;
-           
-            cartNum2.innerHTML = cantActual + ' producto/s';
-           
-           console.log(arrCart.length);
-          
->>>>>>> e60f7954f0bfb72f907820835bc5d2feb3187906
         }
-        
+        button.addEventListener('click', addToCart);
+      }
     })
-    button.addEventListener('click', addToCart);
-       
   }
-  
-  
-  const fitrar = (e) => {
+
+
+  function fitrar(e) {
     e.preventDefault();
 
     let inputFind = input.value;
@@ -491,8 +464,7 @@
     }
 
     let filtrado = productos.filter(
-      (prod) =>
-        prod.producto.includes(inputFind) || prod.categoria.includes(inputFind)
+      (prod) => prod.producto.includes(inputFind) || prod.categoria.includes(inputFind)
     );
     limpiarForm();
 
@@ -529,7 +501,7 @@
         `;
       return (insertProducts.innerHTML += items);
     });
-  };
+  }
 
   const limpiarForm = () => {
     formulario.reset();
@@ -552,7 +524,7 @@
 
     let filtrado = productos.filter(
       (prod) =>
-        prod.producto.includes(inputFind) || prod.categoria.includes(inputFind)
+      prod.producto.includes(inputFind) || prod.categoria.includes(inputFind)
     );
     insertProducts.innerHTML = `<h2>${inputFind.toLocaleUpperCase()}</h2>`;
 
@@ -628,9 +600,9 @@
   StorageMail();
 
   emailName.addEventListener('click', () => {
-    storage.getItem('userMail')
-      ? subMenu.classList.toggle('visible')
-      : subMenu.classList.remove('visible');
+    storage.getItem('userMail') ?
+      subMenu.classList.toggle('visible') :
+      subMenu.classList.remove('visible');
   });
 
   let exit = document.getElementById('exit');
