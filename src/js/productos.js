@@ -571,7 +571,7 @@
                           LOCAL STORAGE
       *******************************************************/
   let emailName = document.getElementById('userSesion').parentNode.parentNode;
-  let emailNameMovile = document.getElementById('userSesion2');
+  let emailNameMovile = document.getElementById('userSesion');
   const storage = window.localStorage;
   let subMenu = document.getElementsByClassName('menuFlotante')[0];
 
