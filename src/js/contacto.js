@@ -85,14 +85,8 @@ const addToNews = () => {
             alert(`Che ${newsMail.value}, ya estas en nuestra base de datos mostro!!`)
         }
     }
-    // if(validNews(client) && validMail(client)){
-    //     newsletter.push(client);
-    // }
-    // yaEsta(clienteA)
-    
-    // newsMail.value = "";
-    // console.log(newsletter)
+   
     console.log(newsletter)
   };
 
-sendNews.addEventListener('click', addToNews, validMail)
+sendNews.addEventListener('click', addToNews)

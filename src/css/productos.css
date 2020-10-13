@@ -314,21 +314,53 @@ button:active {
 /* nucba store ******************** */
 
 section.mainSection {
-    background: url(../assets/font2.jpg);
-    background-size: cover;
+    background: url(../assets/font2.jpg)center center;
+    background-size: 1600px 800px;
     width: 100%;
     background-attachment: fixed;
     top: 80px;
+    animation: esconde 15s;
 }
+
 
 div.mainRow {
     width: 1080px;
+    height: 300px;
     text-align: center;
     padding: 2em 0.5em;
+    animation: esconde 6s;
 }
-
+@keyframes esconde {
+    0%{height: 180px; background-size: 800px 400px;}
+    50%{height: 95px;}
+    100%{height : 300px; background-size: 1600px 800px;}
+    }
+div.mainRow h1 {
+    animation: mueveH1 7s;
+    transform: translate(0px, 0px);
+}
 div.mainRow p {
     color: var(--color-blanco-0);
+     animation: mueveResto 7s;
+     animation-delay: 8s;
+    transform: translate(0, 0px);
+}
+
+div.mainRow button {
+     animation: mueveResto 7s;
+     animation-delay: 9s;
+     transform: translate(0, 0px);
+    
+}
+@keyframes mueveResto {
+    0%{transform:translate(-130%, 0px)}
+    50%{transform:translate(0px, 0px)}
+    100%{transform:translate(0px, 0px)}
+}
+@keyframes mueveH1 {
+    0%{transform:translate(-30%, 0px)}
+    50%{transform:translate(0px, 0px)}
+    100%{transform:translate(0px, 0px)}
 }
 
 .mainRow span {
