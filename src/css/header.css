@@ -215,7 +215,6 @@ div.persianaCartUser{
 }
 
 div.persianaCartUser span{
-    padding: 1em;
     margin: 0 1em;
     color: var(--color-5);
     font-size: 16px;
@@ -229,8 +228,6 @@ div.persianaCartUser span{
     margin: 0 15px;
     border-radius: 15px;
 }
-
-
 
 /* menu movil */
 
@@ -246,12 +243,6 @@ div.persianaCartUser span{
 
 
 /* TAREAS *******************
-
-- seguir con los menus porque no esta terminado.
-- seguir con los media queries.
 - seguir con la validacion de carrito en local storage.
-
 TAREAS *********************/
-
-
 

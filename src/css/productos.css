@@ -314,15 +314,72 @@ button:active {
 /* nucba store ******************** */
 
 section.mainSection {
-    background: url(../assets/font2.jpg)center center;
-    background-size: 1600px 800px;
+    background: url(../assets/font2.jpg);
+    background-size: cover;
     width: 100%;
     background-attachment: fixed;
     top: 80px;
-    animation: esconde 15s;
 }
 
+.nucBye{
+    animation: hidde 1s ease-out forwards;
+}
 
+@keyframes hidde {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+div.mainRow {
+    width: 1080px;
+    text-align: center;
+    padding: 2em 0.5em;
+}
+
+div.mainRow p {
+    color: var(--color-blanco-0);
+}
+
+.mainRow span {
+    color: white;
+}
+
+/* nucba store ******************** */
+
+
+/* media  queries */
+@media (max-width: 992px){
+    .container {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 600px){
+    
+    .container {
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    form {
+        width: 350px;
+    }
+
+    input.inputBusca{
+        width: fit-content;
+    }
+}
+
+/* media  queries */
+
+.none{
+    display: none !important;
+
+}
+/* 
 div.mainRow {
     width: 1080px;
     height: 300px;
@@ -361,35 +418,4 @@ div.mainRow button {
     0%{transform:translate(-30%, 0px)}
     50%{transform:translate(0px, 0px)}
     100%{transform:translate(0px, 0px)}
-}
-
-.mainRow span {
-    color: white;
-}
-
-/* nucba store ******************** */
-
-
-/* media  queries */
-@media (max-width: 992px){
-    .container {
-        grid-template-columns: repeat(2,1fr);
-    }
-}
-
-@media (max-width: 600px){
-    
-    .container {
-        grid-template-columns: repeat(1,1fr);
-    }
-
-    form {
-        width: 350px;
-    }
-
-    input.inputBusca{
-        width: fit-content;
-    }
-}
-
-/* media  queries */
+} */
