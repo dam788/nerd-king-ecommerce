@@ -1,7 +1,6 @@
 (() => {
   // productos
-  let productos = [
-    {
+  let productos = [{
       id: '1',
       categoria: 'remera',
       producto: 'java',
@@ -334,17 +333,13 @@
     persiana = document.getElementById('persiana'),
     findNucba = document.getElementById('findNucba'),
     nucbaSection = document.querySelector('.mainSection'),
-    shoppingCartItemsContainer = document.querySelector(
-      '.shoppingCartItemsContainer'
-    ),
     arrCart = [];
 
-  let cartNum = document.getElementById('cartNum');
-  // let cantActual = parseInt(cartNum.textContent);
-  // let cartNum = document.getElementById('cartNum').value;
+  let cartNum = document.getElementById('cartNum'),
+    cartNum2 = document.getElementById('cartNum2');
 
   const dibujaProductos = () => {
-    return productos.map((prod) => {
+    productos.map((prod) => {
       let items = `
               <div id="prod_#" class="boxProduct">
                   <div class="imgProduct" alt="imagen de producto">
@@ -359,12 +354,13 @@
                           <h3 class="nombreProd">${prod.producto}</h3>
                           <small class="descProd">${prod.descripcion}</small>
                       </div>
-                      <button class="btnCart" id="btnCart" onclick="addToCart(this)">
+                      <button class="btnCart" id="btnCart" onclick=" promedio()">
                           <i class="fas fa-shopping-cart"></i>
                       </button>
                   </div>
               </div>
               `;
+
       insertProducts.innerHTML += items;
 
       const button = document.getElementById('btnCart');
@@ -380,136 +376,50 @@
         cartNum.innerHTML = cantActual;
 
         console.log(arrCart.length);
-        const button = e.target;
-        // const item = button.closest('.item');
-
-        const itemTitle = document.querySelector('.nombreProd').textContent;
-        const itemPrice = document.querySelector('.precio').textContent;
-        const itemImage = document.querySelector('.boxForm').src;
-
-        addItemToShoppingCart(itemTitle, itemPrice, itemImage);
-
         //de aca
 
-        const comprarButton = document.querySelector('.comprarButton');
-        comprarButton.addEventListener('click', comprarButtonClicked);
-
-        function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
-          const elementsTitle = document.getElementsByClassName(
-            'shoppingCartItemTitle'
-          );
-          for (let i = 0; i < elementsTitle.length; i++) {
-            if (elementsTitle[i].innerText === itemTitle) {
-              let elementQuantity = elementsTitle[
-                i
-              ].parentElement.parentElement.parentElement.querySelector(
-                '.shoppingCartItemQuantity'
-              );
-              elementQuantity.value++;
-              $('.toast').toast('show');
-              updateShoppingCartTotal();
-              return;
-            }
-          }
-
-          const shoppingCartRow = document.createElement('div');
-          const shoppingCartContent = `
-            <div class="row shoppingCartItem">
-                    <div class="col-6">
-                        <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                            <img src=${prod.img} class="shopping-cart-image">
-                            <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0">${prod.producto}</h6>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                            <p class="item-price mb-0 shoppingCartItemPrice">$${prod.precioDespues}</p>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div
-                            class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
-                            <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
-                                value="1">
-                            <button class="btn btn-danger buttonDelete" type="button">X</button>
-                        </div>
-                    </div>
-                </div>`;
-          shoppingCartRow.innerHTML = shoppingCartContent;
-          shoppingCartItemsContainer.append(shoppingCartRow);
-          // console.log(shoppingCartItemsContainer)
-
-          document
-            .querySelector('.buttonDelete')
-            .addEventListener('click', removeShoppingCartItem);
-
-          document
-            .querySelector('.shoppingCartItemQuantity')
-            .addEventListener('change', quantityChanged);
-
-          updateShoppingCartTotal();
-        }
-
-        function updateShoppingCartTotal() {
-          let total = 0;
-          const shoppingCartTotal = document.querySelector(
-            '.shoppingCartTotal'
-          );
-
-          const shoppingCartItems = document.querySelectorAll(
-            '.shoppingCartItem'
-          );
-
-          shoppingCartItems.forEach((shoppingCartItem) => {
-            const shoppingCartItemPriceElement = document.querySelector(
-              '.shoppingCartItemPrice'
-            );
-            const shoppingCartItemPrice = Number(
-              shoppingCartItemPriceElement.textContent.replace('$', '')
-            );
-            const shoppingCartItemQuantityElement = document.querySelector(
-              '.shoppingCartItemQuantity'
-            );
-            const shoppingCartItemQuantity = Number(
-              shoppingCartItemQuantityElement.value
-            );
-            total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
-          });
-          shoppingCartTotal.innerHTML = `$ ${total.toFixed(2)}`;
-        }
-
-        function removeShoppingCartItem(event) {
-          const buttonClicked = event.target;
-          buttonClicked.closest('.shoppingCartItem').remove();
-          updateShoppingCartTotal();
-        }
-
-        function quantityChanged(event) {
-          const input = event.target;
-          input.value <= 0 ? (input.value = 1) : null;
-          updateShoppingCartTotal();
-        }
-
-        function comprarButtonClicked() {
-          shoppingCartItemsContainer.innerHTML = '';
-          updateShoppingCartTotal();
-        }
+        button.addEventListener('click', addToCart);
       };
-      button.addEventListener('click', addToCart);
     });
   };
 
-  const fitrar = (e) => {
+  addToCart = () => {
+    arrCart.push(element);
+    console.log(arrCart);
+    let cantActual = parseInt(cartNum.textContent);
+
+    cantActual = arrCart.length;
+    cartNum.innerHTML = cantActual;
+    let cantActual2 = parseInt(cartNum2.textContent);
+
+    cantActual2 = arrCart.length;
+
+    cartNum2.innerHTML = cantActual + ' producto/s';
+
+    console.log(arrCart.length);
+
+    promedio = () => {
+      productos1.forEach((value) => {
+        let valor = value;
+        console.log(valor);
+      });
+    };
+
+    // button.addEventListener('click', addToCart);
+  };
+
+  function fitrar(e) {
     e.preventDefault();
 
     let inputFind = input.value;
-    if(!inputFind){return null}
-    
+    if (!inputFind) {
+      return null;
+    }
+
     let filtrado = productos.filter(
-          (prod) =>
-            prod.producto.includes(inputFind) ||
-            prod.categoria.includes(inputFind)
-        );
+      (prod) =>
+      prod.producto.includes(inputFind) || prod.categoria.includes(inputFind)
+    );
     limpiarForm();
 
     if (filtrado == '') {
@@ -521,7 +431,7 @@
       return (insertProducts.innerHTML = noResults);
     }
     insertProducts.innerHTML = `<h2>${inputFind.toLocaleUpperCase()}</h2>`;
-    
+
     filtrado.map((prod) => {
       let items = `
         <div id="prod_#" class="boxProduct">
@@ -543,9 +453,9 @@
             </div>
         </div>
         `;
-      return insertProducts.innerHTML += items;
+      return (insertProducts.innerHTML += items);
     });
-  };
+  }
 
   const limpiarForm = () => {
     formulario.reset();
@@ -553,30 +463,27 @@
   };
 
   const desplegaMenu = () => {
-    console.log('click');
     persiana.classList.toggle('active');
   };
 
-// productos nucba
+  // productos nucba
 
-const nucbaProducts = () => {
+  const nucbaProducts = () => {
+    nucbaSection.classList.add('nucBye');
+    setTimeout(() => {
+      nucbaSection.classList.add('none');
+    }, 1000);
 
-  nucbaSection.classList.add('nucBye');
-  setTimeout(()=>{
-    nucbaSection.classList.add('none');
-  },1000)
+    let inputFind = 'nucba';
 
-  let inputFind = 'nucba';
+    let filtrado = productos.filter(
+      (prod) =>
+      prod.producto.includes(inputFind) || prod.categoria.includes(inputFind)
+    );
+    insertProducts.innerHTML = `<h2>${inputFind.toLocaleUpperCase()}</h2>`;
 
-  let filtrado = productos.filter(
-    (prod) =>
-      prod.producto.includes(inputFind) ||
-      prod.categoria.includes(inputFind)
-  );
-  insertProducts.innerHTML = `<h2>${inputFind.toLocaleUpperCase()}</h2>`;
-
-  filtrado.map((prod) => {
-    insertProducts.innerHTML += `
+    filtrado.map((prod) => {
+      insertProducts.innerHTML += `
       <div id="prod_#" class="boxProduct">
           <div class="imgProduct" alt="imagen de producto">
               <img class="boxForm" src="${prod.img}">
@@ -597,14 +504,9 @@ const nucbaProducts = () => {
       </div>
       `;
     });
-}
+  };
 
-// productos nucba
-
-
-
-
-
+  // productos nucba
 
   const init = () => {
     document.addEventListener('DOMContentLoaded', () => {
@@ -613,7 +515,7 @@ const nucbaProducts = () => {
       // eventDom
       formulario.addEventListener('submit', fitrar);
       menu.addEventListener('click', desplegaMenu);
-      findNucba.addEventListener('click', nucbaProducts )
+      findNucba.addEventListener('click', nucbaProducts);
     });
   };
 
@@ -652,9 +554,9 @@ const nucbaProducts = () => {
   StorageMail();
 
   emailName.addEventListener('click', () => {
-    storage.getItem('userMail')
-      ? subMenu.classList.toggle('visible')
-      : subMenu.classList.remove('visible');
+    storage.getItem('userMail') ?
+      subMenu.classList.toggle('visible') :
+      subMenu.classList.remove('visible');
   });
 
   let exit = document.getElementById('exit');
