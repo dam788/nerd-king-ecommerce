@@ -9,9 +9,10 @@
       this.producto = producto;
       this.descripcion = descripcion;
       this.precioAntes = precioAntes;
-      this.precioDespues = precioDespues;
+      this.precioDespues = precioAntes - ( precioAntes * precioDespues / 100);
       this.img = img;
     }
+
   }
 
   function agregarProducto(Producto) {
@@ -19,42 +20,42 @@
     productos1.push(produ)
   }
 
-  const java = new Producto('1', 'remera', 'java', 'mellange java', 1200, 600, './assets/productos/remer1.jpg'),
-    nasa = new Producto('2', 'remera', 'nasa', 'producto especial', 1200, 700, './assets/productos/remer2.jpg'),
-    Github = new Producto('3', 'remera', 'Github', 'remera github', 1500, 900, './assets/productos/remer3.jpg'),
-    jsMinimalistRem = new Producto('4', 'remera', 'js minimalist', 'pequeño logo', 1000, 500, './assets/productos/remer4.jpg'),
-    go = new Producto('5', 'remera', 'GO!', 'remera golang celeste', 1700, 1000, './assets/productos/remer5.jpg'),
-    git = new Producto('6', 'remera', 'GIT', 'remera gris git', 1300, 550, './assets/productos/remer6.jpg'),
-    remeraAndroid = new Producto('7', 'remera', 'droid', 'remera android', 1700, 900, './assets/productos/remer7.jpg'),
-    kotlin = new Producto('8', 'remera', 'kotlin', 'flotlin soft', 1800, 850, './assets/productos/remer8.jpg'),
-    batikGo = new Producto('9', 'buzo', 'batik go', 'batik largo', 3500, 1999, './assets/productos/buzo1.jpg'),
-    batikGit = new Producto('10', 'buzo', 'batik git', 'batik largo', 3500, 2399, './assets/productos/buzo2.jpg'),
-    jsMinimalistBuz = new Producto('11', 'buzo', 'js minimalist', 'pequeño logo ', 3500, 1999, './assets/productos/buzo3.jpg'),
-    buzoAndroid = new Producto('12', 'buzo', 'droid', 'buzo android', 3500, 1999, './assets/productos/buzo4.jpg'),
-    buzoKotlinColor = new Producto('13', 'buzo', 'Kotlin', 'buzo kotlin color', 3200, 1999, './assets/productos/buzo5.jpg'),
-    nodeMinimalist = new Producto('14', 'buzo', 'node minimalist', 'node minimalist', 3200, 2399, './assets/productos/buzo6.jpg'),
-    buzoJavascript = new Producto('15', 'buzo', 'js negro', 'buzo javascript', 3200, 2699, './assets/productos/buzo7.jpg'),
-    kotlinNegro = new Producto('16', 'buzo', 'kotlin negro', 'buzo negro logo color', 3200, 2699, './assets/productos/buzo8.jpg'),
-    buzoNucba = new Producto('17', 'buzo', 'buzo nucba', 'buzo especial nucba', 4000, 3099, './assets/productos/buzo9.jpg'),
-    gorraJava = new Producto('18', 'gorra', 'gorra java', 'bordado java', 1200, 799, './assets/productos/gorra1.jpg'),
-    gorraC = new Producto('19', 'gorra', 'c++', 'estampa c++', 1200, 799, './assets/productos/gorra2.jpg'),
-    gorraCode = new Producto('20', 'gorra', 'gorra code', 'estampa code', 1200, 799, './assets/productos/gorra3.jpg'),
-    gorraDroid = new Producto('21', 'gorra', 'gorra droid', 'estampado android', 1200, 799, './assets/productos/gorra4.jpg'),
-    gorraNucba = new Producto('22', 'gorra', 'gorra nucba', 'logo especial nucba', 1200, 799, './assets/productos/gorra5.jpg'),
-    gorraJs = new Producto('23', 'gorra', 'gorra js', 'estampa javascript', 1200, 799, './assets/productos/gorra6.jpg'),
-    padCheatJs = new Producto('24', 'pad', 'pad js', 'cheats js', 600, 299, './assets/productos/pad1.jpg'),
-    padLogoJs = new Producto('25', 'pad', 'pad js', 'logo js', 600, 299, './assets/productos/pad2.jpg'),
-    padGit = new Producto('26', 'pad', 'pad git', 'cheats git', 600, 299, './assets/productos/pad3.jpg'),
-    padLinux = new Producto('27', 'pad', 'pad linux', 'cheats linux', 600, 299, './assets/productos/pad4.jpg'),
-    padMario = new Producto('28', 'pad', 'pad mario', 'estampa mario bros', 600, 299, './assets/productos/pad5.jpg'),
-    riñoneraKitNucba = new Producto('29', 'bolso', 'riñonera kit nucba', '', 6700, 5199, './assets/productos/prod8.jpg'),
+  const java = new Producto('1', 'remera', 'java', 'mellange java', 1200, 50, './assets/productos/remer1.jpg'),
+    nasa = new Producto('2', 'remera', 'nasa', 'producto especial', 1200, 50, './assets/productos/remer2.jpg'),
+    Github = new Producto('3', 'remera', 'Github', 'remera github', 1500, 50, './assets/productos/remer3.jpg'),
+    jsMinimalistRem = new Producto('4', 'remera', 'js minimalist', 'pequeño logo', 1000, 50, './assets/productos/remer4.jpg'),
+    go = new Producto('5', 'remera', 'GO!', 'remera golang celeste', 1700, 50, './assets/productos/remer5.jpg'),
+    git = new Producto('6', 'remera', 'GIT', 'remera gris git', 1300, 50, './assets/productos/remer6.jpg'),
+    remeraAndroid = new Producto('7', 'remera', 'droid', 'remera android', 1700, 50, './assets/productos/remer7.jpg'),
+    kotlin = new Producto('8', 'remera', 'kotlin', 'flotlin soft', 1800, 50, './assets/productos/remer8.jpg'),
+    batikGo = new Producto('9', 'buzo', 'batik go', 'batik largo', 3500, 10, './assets/productos/buzo1.jpg'),
+    batikGit = new Producto('10', 'buzo', 'batik git', 'batik largo', 3500, 10, './assets/productos/buzo2.jpg'),
+    jsMinimalistBuz = new Producto('11', 'buzo', 'js minimalist', 'pequeño logo ', 3500, 10, './assets/productos/buzo3.jpg'),
+    buzoAndroid = new Producto('12', 'buzo', 'droid', 'buzo android', 3500, 10, './assets/productos/buzo4.jpg'),
+    buzoKotlinColor = new Producto('13', 'buzo', 'Kotlin', 'buzo kotlin color', 3200, 10, './assets/productos/buzo5.jpg'),
+    nodeMinimalist = new Producto('14', 'buzo', 'node minimalist', 'node minimalist', 3200, 10, './assets/productos/buzo6.jpg'),
+    buzoJavascript = new Producto('15', 'buzo', 'js negro', 'buzo javascript', 3200, 10, './assets/productos/buzo7.jpg'),
+    kotlinNegro = new Producto('16', 'buzo', 'kotlin negro', 'buzo negro logo color', 3200, 10, './assets/productos/buzo8.jpg'),
+    buzoNucba = new Producto('17', 'buzo', 'buzo nucba', 'buzo especial nucba', 4000, 10, './assets/productos/buzo9.jpg'),
+    gorraJava = new Producto('18', 'gorra', 'gorra java', 'bordado java', 1200, 25, './assets/productos/gorra1.jpg'),
+    gorraC = new Producto('19', 'gorra', 'c++', 'estampa c++', 1200, 25, './assets/productos/gorra2.jpg'),
+    gorraCode = new Producto('20', 'gorra', 'gorra code', 'estampa code', 1200, 25, './assets/productos/gorra3.jpg'),
+    gorraDroid = new Producto('21', 'gorra', 'gorra droid', 'estampado android', 1200, 25, './assets/productos/gorra4.jpg'),
+    gorraNucba = new Producto('22', 'gorra', 'gorra nucba', 'logo especial nucba', 1200, 25, './assets/productos/gorra5.jpg'),
+    gorraJs = new Producto('23', 'gorra', 'gorra js', 'estampa javascript', 1200, 25, './assets/productos/gorra6.jpg'),
+    padCheatJs = new Producto('24', 'pad', 'pad js', 'cheats js', 600, 15, './assets/productos/pad1.jpg'),
+    padLogoJs = new Producto('25', 'pad', 'pad js', 'logo js', 600, 15, './assets/productos/pad2.jpg'),
+    padGit = new Producto('26', 'pad', 'pad git', 'cheats git', 600, 15, './assets/productos/pad3.jpg'),
+    padLinux = new Producto('27', 'pad', 'pad linux', 'cheats linux', 600, 15, './assets/productos/pad4.jpg'),
+    padMario = new Producto('28', 'pad', 'pad mario', 'estampa mario bros', 600, 15, './assets/productos/pad5.jpg'),
+    riñoneraKitNucba = new Producto('29', 'bolso', 'riñonera kit nucba', '', 6700, 30, './assets/productos/prod8.jpg'),
     bolsoGoCel = new Producto('30', 'bolso', 'bolso go', 'golang celeste', 2700, 2199, './assets/productos/prod1.jpg'),
-    bolsoGoHistorieta = new Producto('31', 'bolso', 'bolso go', 'go historieta', 2700, 2199, './assets/productos/prod2.jpg'),
-    bolsoGo3d = new Producto('32', 'bolso', 'bolso go', 'go en 3d', 2700, 2199, './assets/productos/prod3.jpg'),
-    bolsoJsEstampa = new Producto('33', 'bolso', 'bolso js', 'estampa javascript', 2700, 2199, './assets/productos/prod4.jpg'),
-    mochilaJs = new Producto('34', 'bolso', 'mochila js', 'amarilla especial', 5000, 3499, './assets/productos/prod5.jpg'),
-    bolsoJsNode = new Producto('35', 'bolso', 'bolso js', 'js node', 2700, 2199, './assets/productos/prod6.jpg'),
-    bolsoWp = new Producto('36', 'bolso', 'bolso wp', 'motivo wordpress', 2700, 2199, './assets/productos/prod7.jpg');
+    bolsoGoHistorieta = new Producto('31', 'bolso', 'bolso go', 'go historieta', 2700, 30, './assets/productos/prod2.jpg'),
+    bolsoGo3d = new Producto('32', 'bolso', 'bolso go', 'go en 3d', 2700, 30, './assets/productos/prod3.jpg'),
+    bolsoJsEstampa = new Producto('33', 'bolso', 'bolso js', 'estampa javascript', 2700, 30, './assets/productos/prod4.jpg'),
+    mochilaJs = new Producto('34', 'bolso', 'mochila js', 'amarilla especial', 5000, 30, './assets/productos/prod5.jpg'),
+    bolsoJsNode = new Producto('35', 'bolso', 'bolso js', 'js node', 2700, 30, './assets/productos/prod6.jpg'),
+    bolsoWp = new Producto('36', 'bolso', 'bolso wp', 'motivo wordpress', 2700, 30, './assets/productos/prod7.jpg');
 
   agregarProducto(java)
   agregarProducto(nasa)
@@ -100,7 +101,7 @@
     formulario = document.querySelector('form'),
     menu = document.getElementById('menu'),
     persiana = document.getElementById('persiana'),
-    button = document.querySelectorAll('btnCart'),
+    button = document.querySelectorAll('.btnCart'),
     arrCart = [];
 
 
@@ -109,7 +110,7 @@
 
 
   const dibujaProductos = () => {
-    return productos1.map((prod) => {
+    return productos1.map((prod, index) => {
       let items = `
               <div id="prod_#" class="boxProduct">
                   <div class="imgProduct" alt="imagen de producto">
@@ -124,7 +125,7 @@
                           <h3 class="nombreProd">${prod.producto}</h3>
                           <small class="descProd">${prod.descripcion}</small>
                       </div>
-                      <button class="btnCart" id="btnCart" onclick=" promedio()">
+                      <button class="btnCart" id="btnCart" >
                           <i class="fas fa-shopping-cart"></i>
                       </button>
                   </div>
@@ -132,56 +133,36 @@
               `;
       insertProducts.innerHTML += items;
 
-      // promedio = () => {
+      // onclick="addToCart(prod[index])"
 
-      //  console.log(Producto)
-      //   }
-      //   materias
-      //     .map((materia) => {
-      //       console.log(this);
-      //       //alumno.notas['quimica']
-      //       return this.notas[materia];
-      //       //[10,8,10] - RESULTADO FINAL DE TODAS LAS ITERACIONES
-      //     })
-      //     .reduce((acc, val) => acc + val) / materias.length
-      // );
+      addToCart = (e) => {
+        //Podemos rescatar el valor del local storage
+        // console.log(button)
+        console.log(e)
 
 
-      addToCart = () => {
 
-
-        e.preventDefault();
-        arrCart.push(element);
-        console.log(arrCart)
+        arrCart.push(items);
         let cantActual = parseInt(cartNum.textContent);
-
+        
         cantActual = arrCart.length;
         cartNum.innerHTML = cantActual;
-        let cantActual2 = parseInt(cartNum2.textContent);
 
+        let cantActual2 = parseInt(cartNum2.textContent);
         cantActual2 = arrCart.length;
 
         cartNum2.innerHTML = cantActual + ' producto/s';
-        console.log(arrCart.length);
+        // console.log(arrCart.length);
 
-      }
-
-      // button.addEventListener('click', addToCart);
+        productos1.forEach((value) => {
+          let valor = value;
+          // console.log(valor)
+    
+        });
+      } 
     })
   }
 
-  promedio = () => {
-    productos1.forEach((value) => {
-      let valor = value;
-      console.log(valor)
-    });
-
-
-
-
-
-
-  }
 
   const fitrar = (e) => {
     let filtrado, inputFind, noResults, items;
@@ -197,7 +178,10 @@
         prod.producto.includes(inputFind) ||
         prod.categoria.includes(inputFind)
       ));
+      
+      
     limpiarForm();
+    storage.setItem('filter', JSON.stringify(filtrado));
 
     if (filtrado == '') {
       noResults = `
@@ -222,7 +206,7 @@
                               <h3 class="nombreProd">${prod.producto}</h3>
                               <small class="descProd">${prod.descripcion}</small>
                           </div>
-                          <button class="btnCart" id="btnCart" onclick="addToCart(this)">
+                          <button class="btnCart" id="btnCart" onclick="addToCart()">
                               <i class="fas fa-shopping-cart"></i>
                           </button>
                       </div>
