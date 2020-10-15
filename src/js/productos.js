@@ -12,7 +12,7 @@
       this.precioDespues = precioAntes - ( precioAntes * precioDespues / 100);
       this.img = img;
     }
-
+    
   }
 
   function agregarProducto(Producto) {
